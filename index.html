@@ -1,0 +1,435 @@
+<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>富國島景點清單</title>
+<meta name="description" content="富國島全島景點清單 V1：景點、海灘、樂園、文化、自然、表演與夜市。">
+<style>
+:root{--bg:#f5f7fb;--ink:#1f2937;--muted:#64748b;--line:#dbe3ee;--font:14px;--sticky-top:4px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI","Noto Sans TC",sans-serif;font-size:var(--font)}
+.wrap{max-width:1600px;margin:auto;padding:12px}.header,.toolbar,#myCard{background:#fff;border:1px solid var(--line);border-radius:16px;padding:14px;margin-bottom:14px}
+.header h1{margin:0 0 6px;font-size:28px}.header p,.small{color:var(--muted)}.toolbar{position:relative;z-index:1000;overflow:visible}
+.region-buttons,.filters,.profile-actions{display:flex;gap:8px;flex-wrap:wrap;align-items:center}.region-buttons{margin-bottom:10px}button,input,select{font:inherit}
+button{border:1px solid #cbd5e1;background:#fff;border-radius:10px;padding:8px 10px;cursor:pointer}
+.region-buttons button[data-region-filter="北島"]{background:#dbeafe;color:#1d4ed8;border-color:#93c5fd}.region-buttons button[data-region-filter="西北"]{background:#dcfce7;color:#15803d;border-color:#86efac}
+.region-buttons button[data-region-filter="中島"]{background:#fef3c7;color:#a16207;border-color:#fcd34d}.region-buttons button[data-region-filter="中南"]{background:#ffedd5;color:#c2410c;border-color:#fdba74}
+.region-buttons button[data-region-filter="東島"]{background:#ede0d4;color:#7c2d12;border-color:#c7a17a}.region-buttons button[data-region-filter="南島"]{background:#ede9fe;color:#7e22ce;border-color:#c4b5fd}
+.region-buttons button[data-region-filter="全部"]{background:#e2e8f0;color:#334155;border-color:#94a3b8}.region-buttons button:not(.active){opacity:.82}
+.region-buttons button.active{opacity:1!important;font-weight:900!important;outline:3px solid #0f172a;outline-offset:2px;border-width:3px!important;box-shadow:0 4px 14px rgba(15,23,42,.18)!important}
+.region-buttons button.active::before{content:"✓ "}.region-buttons button[data-region-filter="全部"].active{background:#334155!important;color:#fff!important}
+.region-buttons button[data-region-filter="北島"].active{background:#2563eb!important;color:#fff!important}.region-buttons button[data-region-filter="西北"].active{background:#16a34a!important;color:#fff!important}
+.region-buttons button[data-region-filter="中島"].active{background:#d97706!important;color:#fff!important}.region-buttons button[data-region-filter="中南"].active{background:#ea580c!important;color:#fff!important}
+.region-buttons button[data-region-filter="東島"].active{background:#92400e!important;color:#fff!important}.region-buttons button[data-region-filter="南島"].active{background:#7e22ce!important;color:#fff!important}
+.search{min-width:190px;padding:8px 10px;border:1px solid #cbd5e1;border-radius:10px}.saved-select{background:#fff}.multi{position:relative;z-index:1100}.multi>button{min-width:110px;text-align:left}
+.menu{display:none;position:absolute;top:calc(100% + 6px);left:0;z-index:5000;background:#fff;border:1px solid var(--line);border-radius:12px;box-shadow:0 12px 30px rgba(15,23,42,.18);padding:8px;min-width:240px;max-height:320px;overflow:auto}
+.menu.open{display:block}.menu label{display:flex;gap:8px;padding:7px;border-radius:8px;cursor:pointer}.section{position:relative;margin:18px 0 26px}.sticky-group{position:sticky;top:var(--sticky-top);z-index:100;background:var(--bg)}
+.section h2{margin:0;padding:10px 12px;border-radius:12px 12px 0 0;font-size:20px}.count{font-size:.75em;opacity:.72}.head-wrap{overflow:hidden;border:1px solid var(--line);border-top:0;background:#f8fafc}
+.head-track{width:1540px;will-change:transform}.body-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--line);border-top:0;border-radius:0 0 14px 14px;background:#fff}
+table{border-collapse:collapse;table-layout:fixed;width:1540px;min-width:1540px}col.c1{width:44px}col.c2{width:48px}col.c3{width:135px}col.c4{width:215px}col.c5{width:58px}col.c6{width:82px}col.c7{width:88px}col.c8{width:120px}col.c9{width:92px}col.c10{width:110px}col.c11{width:90px}col.c12{width:150px}col.c13{width:215px}col.c14{width:93px}
+th,td{padding:8px 7px;border-bottom:1px solid var(--line);vertical-align:middle}th{background:#f8fafc;text-align:left;font-weight:800;white-space:nowrap}.center{text-align:center}.wrap3{white-space:normal;overflow:hidden;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;line-clamp:3;overflow-wrap:anywhere;line-height:1.35}
+.name{font-weight:800}.zh{display:block;color:#0f766e;font-weight:700;margin-top:2px}.note{font-size:.92em;color:#475569}.tier{font-weight:900}.tier-Splus{color:#b91c1c}.tier-S{color:#b45309}.tier-A{color:#047857}.tier-B{color:#475569}
+.google{color:#0369a1;text-decoration:none;font-weight:700;white-space:nowrap}.mapnav{display:inline-block;background:#0f766e;color:#fff;text-decoration:none;font-weight:800;border-radius:9px;padding:6px 8px;white-space:nowrap}.mapnav::before{content:"📍 "}
+.attraction-row.chosen td{background:#d1fae5!important}.attraction-row.hidden,.section.hidden{display:none}
+.section.north h2{background:#dbeafe;color:#1d4ed8}.section.northwest h2{background:#dcfce7;color:#15803d}.section.central h2{background:#fef3c7;color:#a16207}.section.midsouth h2{background:#ffedd5;color:#c2410c}.section.east h2{background:#ede0d4;color:#7c2d12}.section.south h2{background:#ede9fe;color:#7e22ce}
+.section.north tbody tr:nth-child(odd) td{background:#eaf2ff}.section.northwest tbody tr:nth-child(odd) td{background:#edf8f0}.section.central tbody tr:nth-child(odd) td{background:#fff8dc}.section.midsouth tbody tr:nth-child(odd) td{background:#fff1e5}.section.east tbody tr:nth-child(odd) td{background:#f7efe7}.section.south tbody tr:nth-child(odd) td{background:#f2ecff}
+#backTop{position:fixed;right:16px;bottom:16px;width:48px;height:48px;border-radius:50%;background:#0f766e;color:#fff;font-size:22px;display:none;align-items:center;justify-content:center;z-index:999}#backTop.show{display:flex}
+@media(max-width:720px){:root{--font:12px;--sticky-top:calc(env(safe-area-inset-top,0px) + 4px)}.wrap{padding:8px}.header h1{font-size:20px}.toolbar{padding:10px}.search{min-width:145px;flex:1}.section h2{font-size:17px}.menu{position:fixed;left:12px;right:12px;top:auto;bottom:12px;min-width:0;max-height:58vh;z-index:9999}}
+</style></head><body><div class="wrap">
+<div class="header"><h1>🏝️ 富國島景點清單</h1><p>獨立景點版 V1｜海灘・樂園・自然・文化・表演・夜市｜首版收錄 <b>34</b> 個候選景點</p></div>
+<div id="myCard"><h2>📌 我的景點清單</h2><div class="profile-actions">
+<input id="profile" class="search" placeholder="例如：爸爸必去、媽媽喜歡"><select id="savedProfiles" class="search saved-select"><option value="">已儲存清單</option></select>
+<button id="saveMine">儲存我的清單</button><button id="loadMine">讀取此清單</button><button id="copyMine">複製我的清單</button><button id="clearMine">清空目前勾選</button></div>
+<div id="myList"><p class="small">尚未勾選景點。</p></div></div>
+<div class="toolbar"><div class="region-buttons" id="regionButtons">
+<button class="active" data-region-filter="全部">全部</button><button data-region-filter="北島">北島</button><button data-region-filter="西北">西北／Ông Lang 翁朗</button><button data-region-filter="中島">中島／Dương Đông 楊東</button><button data-region-filter="中南">中南／Long Beach 長灘</button><button data-region-filter="東島">東島／Hàm Ninh 咸寧</button><button data-region-filter="南島">南島／An Thới 安泰</button></div>
+<div class="filters">
+<div class="multi"><button data-menu="typeMenu">類型：全部</button><div class="menu" id="typeMenu"><label><input type="checkbox" value="主題樂園"> 主題樂園</label><label><input type="checkbox" value="主題樂園／海島"> 主題樂園／海島</label><label><input type="checkbox" value="傳統市場"> 傳統市場</label><label><input type="checkbox" value="博物館"> 博物館</label><label><input type="checkbox" value="地標／建築"> 地標／建築</label><label><input type="checkbox" value="夜市"> 夜市</label><label><input type="checkbox" value="夜市／娛樂"> 夜市／娛樂</label><label><input type="checkbox" value="娛樂街區"> 娛樂街區</label><label><input type="checkbox" value="寺廟／文化"> 寺廟／文化</label><label><input type="checkbox" value="建築／娛樂街區"> 建築／娛樂街區</label><label><input type="checkbox" value="文化／寺廟"> 文化／寺廟</label><label><input type="checkbox" value="歷史遺址"> 歷史遺址</label><label><input type="checkbox" value="水上樂園"> 水上樂園</label><label><input type="checkbox" value="海灘"> 海灘</label><label><input type="checkbox" value="漁村／文化"> 漁村／文化</label><label><input type="checkbox" value="漁村／自然"> 漁村／自然</label><label><input type="checkbox" value="瀑布／自然"> 瀑布／自然</label><label><input type="checkbox" value="產業文化"> 產業文化</label><label><input type="checkbox" value="纜車／景觀"> 纜車／景觀</label><label><input type="checkbox" value="自然景觀"> 自然景觀</label><label><input type="checkbox" value="表演"> 表演</label><label><input type="checkbox" value="野生動物園"> 野生動物園</label><label><input type="checkbox" value="離島／海上活動"> 離島／海上活動</label></div></div>
+<div class="multi"><button data-menu="tierMenu">推薦：全部</button><div class="menu" id="tierMenu"><label><input type="checkbox" value="S+"> S+</label><label><input type="checkbox" value="S"> S</label><label><input type="checkbox" value="A"> A</label><label><input type="checkbox" value="B"> B</label></div></div>
+<div class="multi"><button data-menu="timeMenu">時段：全部</button><div class="menu" id="timeMenu"><label><input type="checkbox" value="上午"> 上午</label><label><input type="checkbox" value="上午／下午"> 上午／下午</label><label><input type="checkbox" value="上午～下午"> 上午～下午</label><label><input type="checkbox" value="上午～傍晚"> 上午～傍晚</label><label><input type="checkbox" value="下午"> 下午</label><label><input type="checkbox" value="下午～日落"> 下午～日落</label><label><input type="checkbox" value="下午～晚上"> 下午～晚上</label><label><input type="checkbox" value="傍晚～日落"> 傍晚～日落</label><label><input type="checkbox" value="傍晚～晚上"> 傍晚～晚上</label><label><input type="checkbox" value="日落前後"> 日落前後</label><label><input type="checkbox" value="晚上"> 晚上</label><label><input type="checkbox" value="白天"> 白天</label></div></div>
+<div class="multi"><button data-menu="featureMenu">特色：全部</button><div class="menu" id="featureMenu"><label><input type="checkbox" value="健行"> 健行</label><label><input type="checkbox" value="刺激設施"> 刺激設施</label><label><input type="checkbox" value="動物"> 動物</label><label><input type="checkbox" value="在地文化"> 在地文化</label><label><input type="checkbox" value="在地氣氛"> 在地氣氛</label><label><input type="checkbox" value="在地生活"> 在地生活</label><label><input type="checkbox" value="在地產業"> 在地產業</label><label><input type="checkbox" value="地標"> 地標</label><label><input type="checkbox" value="夜市"> 夜市</label><label><input type="checkbox" value="夜景"> 夜景</label><label><input type="checkbox" value="夜間"> 夜間</label><label><input type="checkbox" value="室內"> 室內</label><label><input type="checkbox" value="室內外"> 室內外</label><label><input type="checkbox" value="寺廟"> 寺廟</label><label><input type="checkbox" value="展示"> 展示</label><label><input type="checkbox" value="市場"> 市場</label><label><input type="checkbox" value="建築"> 建築</label><label><input type="checkbox" value="戰爭遺址"> 戰爭遺址</label><label><input type="checkbox" value="戶外"> 戶外</label><label><input type="checkbox" value="拍照"> 拍照</label><label><input type="checkbox" value="放鬆"> 放鬆</label><label><input type="checkbox" value="散步"> 散步</label><label><input type="checkbox" value="文化"> 文化</label><label><input type="checkbox" value="日落"> 日落</label><label><input type="checkbox" value="森林"> 森林</label><label><input type="checkbox" value="歷史"> 歷史</label><label><input type="checkbox" value="水舞"> 水舞</label><label><input type="checkbox" value="浮潛"> 浮潛</label><label><input type="checkbox" value="海島"> 海島</label><label><input type="checkbox" value="海星"> 海星</label><label><input type="checkbox" value="海景"> 海景</label><label><input type="checkbox" value="海灘"> 海灘</label><label><input type="checkbox" value="溪流"> 溪流</label><label><input type="checkbox" value="漁村"> 漁村</label><label><input type="checkbox" value="瀑布"> 瀑布</label><label><input type="checkbox" value="煙火"> 煙火</label><label><input type="checkbox" value="燈光"> 燈光</label><label><input type="checkbox" value="玩水"> 玩水</label><label><input type="checkbox" value="珍珠"> 珍珠</label><label><input type="checkbox" value="產業"> 產業</label><label><input type="checkbox" value="白沙"> 白沙</label><label><input type="checkbox" value="秘境"> 秘境</label><label><input type="checkbox" value="纜車"> 纜車</label><label><input type="checkbox" value="自然"> 自然</label><label><input type="checkbox" value="表演"> 表演</label><label><input type="checkbox" value="親子"> 親子</label><label><input type="checkbox" value="跳島"> 跳島</label><label><input type="checkbox" value="農園"> 農園</label><label><input type="checkbox" value="遊樂"> 遊樂</label><label><input type="checkbox" value="遊樂設施"> 遊樂設施</label><label><input type="checkbox" value="高空景觀"> 高空景觀</label></div></div>
+<input id="search" class="search" placeholder="搜尋景點、中文名、區域、特色"><button id="reset">重設篩選</button></div>
+<p class="small">同一篩選群組可複選；群組內為「任一符合」，不同群組之間為「同時符合」。導航會先開啟 Google Maps 景點頁，再由你自行按「路線」選起點。</p></div>
+<section class="section north" data-section-region="北島">
+<div class="sticky-group"><h2>北島｜Grand World 富國大世界・Gành Dầu 甘油角 <span class="count">(8)</span></h2>
+<div class="head-wrap"><div class="head-track"><table><colgroup><col class="c1"><col class="c2"><col class="c3"><col class="c4"><col class="c5"><col class="c6"><col class="c7"><col class="c8"><col class="c9"><col class="c10"><col class="c11"><col class="c12"><col class="c13"><col class="c14"></colgroup><thead><tr>
+<th>勾選</th><th>項次</th><th>區域</th><th>景點（原文＋中文）</th><th>推薦</th><th>Google</th><th>查看介紹</th>
+<th>景點類型</th><th>停留時間</th><th>推薦時段</th><th>門票</th><th>特色</th><th>備註</th><th>導航</th>
+</tr></thead></table></div></div></div>
+<div class="body-wrap"><table><colgroup><col class="c1"><col class="c2"><col class="c3"><col class="c4"><col class="c5"><col class="c6"><col class="c7"><col class="c8"><col class="c9"><col class="c10"><col class="c11"><col class="c12"><col class="c13"><col class="c14"></colgroup><tbody><tr class="attraction-row" data-id="1" data-region="北島" data-type="主題樂園" data-tier="S+" data-time="上午～傍晚" data-feature="親子／遊樂設施／室內外" data-search="VinWonders Phú Quốc 富國島珍珠樂園 Bãi Dài 長灘北區 Phu Quoc 主題樂園 大型主題樂園，建議安排完整一天。">
+<td class="center"><input class="pick" type="checkbox" data-id="1"></td><td class="center">1</td>
+<td><div class="wrap3">北島<br>Bãi Dài 長灘北區</div></td>
+<td><div class="wrap3"><span class="name">VinWonders Phú Quốc</span><span class="zh">富國島珍珠樂園</span></div></td>
+<td class="center"><span class="tier tier-Splus">S+</span></td>
+<td><a class="google" href="https://www.google.com/search?q=VinWonders%20Ph%C3%BA%20Qu%E1%BB%91c%20%E5%AF%8C%E5%9C%8B%E5%B3%B6%E7%8F%8D%E7%8F%A0%E6%A8%82%E5%9C%92%20B%C3%A3i%20D%C3%A0i%20%E9%95%B7%E7%81%98%E5%8C%97%E5%8D%80%20Phu%20Quoc%20Google%20reviews" target="_blank" rel="noopener">⭐ 4.7</a></td>
+<td><a class="google" href="https://www.google.com/search?q=VinWonders%20Ph%C3%BA%20Qu%E1%BB%91c%20%E5%AF%8C%E5%9C%8B%E5%B3%B6%E7%8F%8D%E7%8F%A0%E6%A8%82%E5%9C%92%20B%C3%A3i%20D%C3%A0i%20%E9%95%B7%E7%81%98%E5%8C%97%E5%8D%80%20Phu%20Quoc" target="_blank" rel="noopener">查看介紹</a></td>
+<td>主題樂園</td><td>6–8 小時</td><td>上午～傍晚</td><td>需門票</td>
+<td>親子／遊樂設施／室內外</td><td class="note">大型主題樂園，建議安排完整一天。</td>
+<td><a class="mapnav" href="https://www.google.com/maps/search/?api=1&query=VinWonders%20Ph%C3%BA%20Qu%E1%BB%91c%20%E5%AF%8C%E5%9C%8B%E5%B3%B6%E7%8F%8D%E7%8F%A0%E6%A8%82%E5%9C%92%20B%C3%A3i%20D%C3%A0i%20%E9%95%B7%E7%81%98%E5%8C%97%E5%8D%80%20Phu%20Quoc" target="_blank" rel="noopener">導航</a></td></tr><tr class="attraction-row" data-id="2" data-region="北島" data-type="野生動物園" data-tier="S+" data-time="上午" data-feature="動物／親子／戶外" data-search="Vinpearl Safari Phú Quốc 富國島珍珠野生動物園 Bãi Dài 長灘北區 Phu Quoc 野生動物園 建議早上前往，與 Grand World 可排同一天。">
+<td class="center"><input class="pick" type="checkbox" data-id="2"></td><td class="center">2</td>
+<td><div class="wrap3">北島<br>Bãi Dài 長灘北區</div></td>
+<td><div class="wrap3"><span class="name">Vinpearl Safari Phú Quốc</span><span class="zh">富國島珍珠野生動物園</span></div></td>
+<td class="center"><span class="tier tier-Splus">S+</span></td>
+<td><a class="google" href="https://www.google.com/search?q=Vinpearl%20Safari%20Ph%C3%BA%20Qu%E1%BB%91c%20%E5%AF%8C%E5%9C%8B%E5%B3%B6%E7%8F%8D%E7%8F%A0%E9%87%8E%E7%94%9F%E5%8B%95%E7%89%A9%E5%9C%92%20B%C3%A3i%20D%C3%A0i%20%E9%95%B7%E7%81%98%E5%8C%97%E5%8D%80%20Phu%20Quoc%20Google%20reviews" target="_blank" rel="noopener">⭐ 4.6</a></td>
+<td><a class="google" href="https://www.google.com/search?q=Vinpearl%20Safari%20Ph%C3%BA%20Qu%E1%BB%91c%20%E5%AF%8C%E5%9C%8B%E5%B3%B6%E7%8F%8D%E7%8F%A0%E9%87%8E%E7%94%9F%E5%8B%95%E7%89%A9%E5%9C%92%20B%C3%A3i%20D%C3%A0i%20%E9%95%B7%E7%81%98%E5%8C%97%E5%8D%80%20Phu%20Quoc" target="_blank" rel="noopener">查看介紹</a></td>
+<td>野生動物園</td><td>4–6 小時</td><td>上午</td><td>需門票</td>
+<td>動物／親子／戶外</td><td class="note">建議早上前往，與 Grand World 可排同一天。</td>
+<td><a class="mapnav" href="https://www.google.com/maps/search/?api=1&query=Vinpearl%20Safari%20Ph%C3%BA%20Qu%E1%BB%91c%20%E5%AF%8C%E5%9C%8B%E5%B3%B6%E7%8F%8D%E7%8F%A0%E9%87%8E%E7%94%9F%E5%8B%95%E7%89%A9%E5%9C%92%20B%C3%A3i%20D%C3%A0i%20%E9%95%B7%E7%81%98%E5%8C%97%E5%8D%80%20Phu%20Quoc" target="_blank" rel="noopener">導航</a></td></tr><tr class="attraction-row" data-id="3" data-region="北島" data-type="娛樂街區" data-tier="S+" data-time="傍晚～晚上" data-feature="拍照／夜景／表演／散步" data-search="Grand World Phú Quốc 富國大世界 Grand World 富國大世界 Phu Quoc 娛樂街區 適合傍晚後逛街、拍照與看夜間活動。">
+<td class="center"><input class="pick" type="checkbox" data-id="3"></td><td class="center">3</td>
+<td><div class="wrap3">北島<br>Grand World 富國大世界</div></td>
+<td><div class="wrap3"><span class="name">Grand World Phú Quốc</span><span class="zh">富國大世界</span></div></td>
+<td class="center"><span class="tier tier-Splus">S+</span></td>
+<td><a class="google" href="https://www.google.com/search?q=Grand%20World%20Ph%C3%BA%20Qu%E1%BB%91c%20%E5%AF%8C%E5%9C%8B%E5%A4%A7%E4%B8%96%E7%95%8C%20Grand%20World%20%E5%AF%8C%E5%9C%8B%E5%A4%A7%E4%B8%96%E7%95%8C%20Phu%20Quoc%20Google%20reviews" target="_blank" rel="noopener">⭐ 4.6</a></td>
+<td><a class="google" href="https://www.google.com/search?q=Grand%20World%20Ph%C3%BA%20Qu%E1%BB%91c%20%E5%AF%8C%E5%9C%8B%E5%A4%A7%E4%B8%96%E7%95%8C%20Grand%20World%20%E5%AF%8C%E5%9C%8B%E5%A4%A7%E4%B8%96%E7%95%8C%20Phu%20Quoc" target="_blank" rel="noopener">查看介紹</a></td>
+<td>娛樂街區</td><td>3–5 小時</td><td>傍晚～晚上</td><td>部分免費</td>
+<td>拍照／夜景／表演／散步</td><td class="note">適合傍晚後逛街、拍照與看夜間活動。</td>
+<td><a class="mapnav" href="https://www.google.com/maps/search/?api=1&query=Grand%20World%20Ph%C3%BA%20Qu%E1%BB%91c%20%E5%AF%8C%E5%9C%8B%E5%A4%A7%E4%B8%96%E7%95%8C%20Grand%20World%20%E5%AF%8C%E5%9C%8B%E5%A4%A7%E4%B8%96%E7%95%8C%20Phu%20Quoc" target="_blank" rel="noopener">導航</a></td></tr><tr class="attraction-row" data-id="4" data-region="北島" data-type="博物館" data-tier="A" data-time="白天" data-feature="室內／親子／拍照" data-search="Teddy Bear Museum Phú Quốc 富國島泰迪熊博物館 Grand World 富國大世界 Phu Quoc 博物館 Grand World 內的室內景點。">
+<td class="center"><input class="pick" type="checkbox" data-id="4"></td><td class="center">4</td>
+<td><div class="wrap3">北島<br>Grand World 富國大世界</div></td>
+<td><div class="wrap3"><span class="name">Teddy Bear Museum Phú Quốc</span><span class="zh">富國島泰迪熊博物館</span></div></td>
+<td class="center"><span class="tier tier-A">A</span></td>
+<td><a class="google" href="https://www.google.com/search?q=Teddy%20Bear%20Museum%20Ph%C3%BA%20Qu%E1%BB%91c%20%E5%AF%8C%E5%9C%8B%E5%B3%B6%E6%B3%B0%E8%BF%AA%E7%86%8A%E5%8D%9A%E7%89%A9%E9%A4%A8%20Grand%20World%20%E5%AF%8C%E5%9C%8B%E5%A4%A7%E4%B8%96%E7%95%8C%20Phu%20Quoc%20Google%20reviews" target="_blank" rel="noopener">⭐ 4.6</a></td>
+<td><a class="google" href="https://www.google.com/search?q=Teddy%20Bear%20Museum%20Ph%C3%BA%20Qu%E1%BB%91c%20%E5%AF%8C%E5%9C%8B%E5%B3%B6%E6%B3%B0%E8%BF%AA%E7%86%8A%E5%8D%9A%E7%89%A9%E9%A4%A8%20Grand%20World%20%E5%AF%8C%E5%9C%8B%E5%A4%A7%E4%B8%96%E7%95%8C%20Phu%20Quoc" target="_blank" rel="noopener">查看介紹</a></td>
+<td>博物館</td><td>1–2 小時</td><td>白天</td><td>需門票</td>
+<td>室內／親子／拍照</td><td class="note">Grand World 內的室內景點。</td>
+<td><a class="mapnav" href="https://www.google.com/maps/search/?api=1&query=Teddy%20Bear%20Museum%20Ph%C3%BA%20Qu%E1%BB%91c%20%E5%AF%8C%E5%9C%8B%E5%B3%B6%E6%B3%B0%E8%BF%AA%E7%86%8A%E5%8D%9A%E7%89%A9%E9%A4%A8%20Grand%20World%20%E5%AF%8C%E5%9C%8B%E5%A4%A7%E4%B8%96%E7%95%8C%20Phu%20Quoc" target="_blank" rel="noopener">導航</a></td></tr><tr class="attraction-row" data-id="5" data-region="北島" data-type="表演" data-tier="S" data-time="晚上" data-feature="文化／表演／夜間" data-search="The Quintessence of Vietnam 越南精華文化秀 Grand World 富國大世界 Phu Quoc 表演 大型文化實景表演，需留意當日場次。">
+<td class="center"><input class="pick" type="checkbox" data-id="5"></td><td class="center">5</td>
+<td><div class="wrap3">北島<br>Grand World 富國大世界</div></td>
+<td><div class="wrap3"><span class="name">The Quintessence of Vietnam</span><span class="zh">越南精華文化秀</span></div></td>
+<td class="center"><span class="tier tier-S">S</span></td>
+<td><a class="google" href="https://www.google.com/search?q=The%20Quintessence%20of%20Vietnam%20%E8%B6%8A%E5%8D%97%E7%B2%BE%E8%8F%AF%E6%96%87%E5%8C%96%E7%A7%80%20Grand%20World%20%E5%AF%8C%E5%9C%8B%E5%A4%A7%E4%B8%96%E7%95%8C%20Phu%20Quoc%20Google%20reviews" target="_blank" rel="noopener">⭐ 4.6</a></td>
+<td><a class="google" href="https://www.google.com/search?q=The%20Quintessence%20of%20Vietnam%20%E8%B6%8A%E5%8D%97%E7%B2%BE%E8%8F%AF%E6%96%87%E5%8C%96%E7%A7%80%20Grand%20World%20%E5%AF%8C%E5%9C%8B%E5%A4%A7%E4%B8%96%E7%95%8C%20Phu%20Quoc" target="_blank" rel="noopener">查看介紹</a></td>
+<td>表演</td><td>1–2 小時</td><td>晚上</td><td>需門票</td>
+<td>文化／表演／夜間</td><td class="note">大型文化實景表演，需留意當日場次。</td>
+<td><a class="mapnav" href="https://www.google.com/maps/search/?api=1&query=The%20Quintessence%20of%20Vietnam%20%E8%B6%8A%E5%8D%97%E7%B2%BE%E8%8F%AF%E6%96%87%E5%8C%96%E7%A7%80%20Grand%20World%20%E5%AF%8C%E5%9C%8B%E5%A4%A7%E4%B8%96%E7%95%8C%20Phu%20Quoc" target="_blank" rel="noopener">導航</a></td></tr><tr class="attraction-row" data-id="6" data-region="北島" data-type="自然景觀" data-tier="A" data-time="上午／下午" data-feature="海景／自然／拍照" data-search="Gành Dầu Cape 甘油角 Gành Dầu 甘油角 Phu Quoc 自然景觀 北端海岸景觀，適合順遊。">
+<td class="center"><input class="pick" type="checkbox" data-id="6"></td><td class="center">6</td>
+<td><div class="wrap3">北島<br>Gành Dầu 甘油角</div></td>
+<td><div class="wrap3"><span class="name">Gành Dầu Cape</span><span class="zh">甘油角</span></div></td>
+<td class="center"><span class="tier tier-A">A</span></td>
+<td><a class="google" href="https://www.google.com/search?q=G%C3%A0nh%20D%E1%BA%A7u%20Cape%20%E7%94%98%E6%B2%B9%E8%A7%92%20G%C3%A0nh%20D%E1%BA%A7u%20%E7%94%98%E6%B2%B9%E8%A7%92%20Phu%20Quoc%20Google%20reviews" target="_blank" rel="noopener">⭐ 4.4</a></td>
+<td><a class="google" href="https://www.google.com/search?q=G%C3%A0nh%20D%E1%BA%A7u%20Cape%20%E7%94%98%E6%B2%B9%E8%A7%92%20G%C3%A0nh%20D%E1%BA%A7u%20%E7%94%98%E6%B2%B9%E8%A7%92%20Phu%20Quoc" target="_blank" rel="noopener">查看介紹</a></td>
+<td>自然景觀</td><td>1–2 小時</td><td>上午／下午</td><td>免費</td>
+<td>海景／自然／拍照</td><td class="note">北端海岸景觀，適合順遊。</td>
+<td><a class="mapnav" href="https://www.google.com/maps/search/?api=1&query=G%C3%A0nh%20D%E1%BA%A7u%20Cape%20%E7%94%98%E6%B2%B9%E8%A7%92%20G%C3%A0nh%20D%E1%BA%A7u%20%E7%94%98%E6%B2%B9%E8%A7%92%20Phu%20Quoc" target="_blank" rel="noopener">導航</a></td></tr><tr class="attraction-row" data-id="7" data-region="北島" data-type="漁村／自然" data-tier="S" data-time="上午～下午" data-feature="海景／漁村／海星／拍照" data-search="Rạch Vẹm Fishing Village 拉赫維姆漁村 Rạch Vẹm 拉赫維姆 Phu Quoc 漁村／自然 以自然海景與漁村體驗聞名；海況與季節會影響體驗。">
+<td class="center"><input class="pick" type="checkbox" data-id="7"></td><td class="center">7</td>
+<td><div class="wrap3">北島<br>Rạch Vẹm 拉赫維姆</div></td>
+<td><div class="wrap3"><span class="name">Rạch Vẹm Fishing Village</span><span class="zh">拉赫維姆漁村</span></div></td>
+<td class="center"><span class="tier tier-S">S</span></td>
+<td><a class="google" href="https://www.google.com/search?q=R%E1%BA%A1ch%20V%E1%BA%B9m%20Fishing%20Village%20%E6%8B%89%E8%B5%AB%E7%B6%AD%E5%A7%86%E6%BC%81%E6%9D%91%20R%E1%BA%A1ch%20V%E1%BA%B9m%20%E6%8B%89%E8%B5%AB%E7%B6%AD%E5%A7%86%20Phu%20Quoc%20Google%20reviews" target="_blank" rel="noopener">⭐ 4.4</a></td>
+<td><a class="google" href="https://www.google.com/search?q=R%E1%BA%A1ch%20V%E1%BA%B9m%20Fishing%20Village%20%E6%8B%89%E8%B5%AB%E7%B6%AD%E5%A7%86%E6%BC%81%E6%9D%91%20R%E1%BA%A1ch%20V%E1%BA%B9m%20%E6%8B%89%E8%B5%AB%E7%B6%AD%E5%A7%86%20Phu%20Quoc" target="_blank" rel="noopener">查看介紹</a></td>
+<td>漁村／自然</td><td>2–4 小時</td><td>上午～下午</td><td>免費</td>
+<td>海景／漁村／海星／拍照</td><td class="note">以自然海景與漁村體驗聞名；海況與季節會影響體驗。</td>
+<td><a class="mapnav" href="https://www.google.com/maps/search/?api=1&query=R%E1%BA%A1ch%20V%E1%BA%B9m%20Fishing%20Village%20%E6%8B%89%E8%B5%AB%E7%B6%AD%E5%A7%86%E6%BC%81%E6%9D%91%20R%E1%BA%A1ch%20V%E1%BA%B9m%20%E6%8B%89%E8%B5%AB%E7%B6%AD%E5%A7%86%20Phu%20Quoc" target="_blank" rel="noopener">導航</a></td></tr><tr class="attraction-row" data-id="8" data-region="北島" data-type="海灘" data-tier="A" data-time="上午～下午" data-feature="秘境／海灘／自然" data-search="Rạch Tràm Beach 拉赫湛海灘 Rạch Tràm 拉赫湛 Phu Quoc 海灘 較原始安靜的北島海岸。">
+<td class="center"><input class="pick" type="checkbox" data-id="8"></td><td class="center">8</td>
+<td><div class="wrap3">北島<br>Rạch Tràm 拉赫湛</div></td>
+<td><div class="wrap3"><span class="name">Rạch Tràm Beach</span><span class="zh">拉赫湛海灘</span></div></td>
+<td class="center"><span class="tier tier-A">A</span></td>
+<td><a class="google" href="https://www.google.com/search?q=R%E1%BA%A1ch%20Tr%C3%A0m%20Beach%20%E6%8B%89%E8%B5%AB%E6%B9%9B%E6%B5%B7%E7%81%98%20R%E1%BA%A1ch%20Tr%C3%A0m%20%E6%8B%89%E8%B5%AB%E6%B9%9B%20Phu%20Quoc%20Google%20reviews" target="_blank" rel="noopener">⭐ 4.5</a></td>
+<td><a class="google" href="https://www.google.com/search?q=R%E1%BA%A1ch%20Tr%C3%A0m%20Beach%20%E6%8B%89%E8%B5%AB%E6%B9%9B%E6%B5%B7%E7%81%98%20R%E1%BA%A1ch%20Tr%C3%A0m%20%E6%8B%89%E8%B5%AB%E6%B9%9B%20Phu%20Quoc" target="_blank" rel="noopener">查看介紹</a></td>
+<td>海灘</td><td>2–3 小時</td><td>上午～下午</td><td>免費</td>
+<td>秘境／海灘／自然</td><td class="note">較原始安靜的北島海岸。</td>
+<td><a class="mapnav" href="https://www.google.com/maps/search/?api=1&query=R%E1%BA%A1ch%20Tr%C3%A0m%20Beach%20%E6%8B%89%E8%B5%AB%E6%B9%9B%E6%B5%B7%E7%81%98%20R%E1%BA%A1ch%20Tr%C3%A0m%20%E6%8B%89%E8%B5%AB%E6%B9%9B%20Phu%20Quoc" target="_blank" rel="noopener">導航</a></td></tr></tbody></table></div></section><section class="section northwest" data-section-region="西北">
+<div class="sticky-group"><h2>西北｜Ông Lang 翁朗・Cửa Cạn 庫阿坎 <span class="count">(2)</span></h2>
+<div class="head-wrap"><div class="head-track"><table><colgroup><col class="c1"><col class="c2"><col class="c3"><col class="c4"><col class="c5"><col class="c6"><col class="c7"><col class="c8"><col class="c9"><col class="c10"><col class="c11"><col class="c12"><col class="c13"><col class="c14"></colgroup><thead><tr>
+<th>勾選</th><th>項次</th><th>區域</th><th>景點（原文＋中文）</th><th>推薦</th><th>Google</th><th>查看介紹</th>
+<th>景點類型</th><th>停留時間</th><th>推薦時段</th><th>門票</th><th>特色</th><th>備註</th><th>導航</th>
+</tr></thead></table></div></div></div>
+<div class="body-wrap"><table><colgroup><col class="c1"><col class="c2"><col class="c3"><col class="c4"><col class="c5"><col class="c6"><col class="c7"><col class="c8"><col class="c9"><col class="c10"><col class="c11"><col class="c12"><col class="c13"><col class="c14"></colgroup><tbody><tr class="attraction-row" data-id="9" data-region="西北" data-type="海灘" data-tier="A" data-time="下午～日落" data-feature="海灘／日落／放鬆" data-search="Ông Lang Beach 翁朗海灘 Ông Lang 翁朗 Phu Quoc 海灘 西北岸較悠閒的海灘，可安排看夕陽。">
+<td class="center"><input class="pick" type="checkbox" data-id="9"></td><td class="center">9</td>
+<td><div class="wrap3">西北<br>Ông Lang 翁朗</div></td>
+<td><div class="wrap3"><span class="name">Ông Lang Beach</span><span class="zh">翁朗海灘</span></div></td>
+<td class="center"><span class="tier tier-A">A</span></td>
+<td><a class="google" href="https://www.google.com/search?q=%C3%94ng%20Lang%20Beach%20%E7%BF%81%E6%9C%97%E6%B5%B7%E7%81%98%20%C3%94ng%20Lang%20%E7%BF%81%E6%9C%97%20Phu%20Quoc%20Google%20reviews" target="_blank" rel="noopener">⭐ 4.5</a></td>
+<td><a class="google" href="https://www.google.com/search?q=%C3%94ng%20Lang%20Beach%20%E7%BF%81%E6%9C%97%E6%B5%B7%E7%81%98%20%C3%94ng%20Lang%20%E7%BF%81%E6%9C%97%20Phu%20Quoc" target="_blank" rel="noopener">查看介紹</a></td>
+<td>海灘</td><td>2–3 小時</td><td>下午～日落</td><td>免費</td>
+<td>海灘／日落／放鬆</td><td class="note">西北岸較悠閒的海灘，可安排看夕陽。</td>
+<td><a class="mapnav" href="https://www.google.com/maps/search/?api=1&query=%C3%94ng%20Lang%20Beach%20%E7%BF%81%E6%9C%97%E6%B5%B7%E7%81%98%20%C3%94ng%20Lang%20%E7%BF%81%E6%9C%97%20Phu%20Quoc" target="_blank" rel="noopener">導航</a></td></tr><tr class="attraction-row" data-id="10" data-region="西北" data-type="海灘" data-tier="B" data-time="下午" data-feature="海灘／自然" data-search="Cửa Cạn Beach 庫阿坎海灘 Cửa Cạn 庫阿坎 Phu Quoc 海灘 適合順路停留，不必特別拉長行程。">
+<td class="center"><input class="pick" type="checkbox" data-id="10"></td><td class="center">10</td>
+<td><div class="wrap3">西北<br>Cửa Cạn 庫阿坎</div></td>
+<td><div class="wrap3"><span class="name">Cửa Cạn Beach</span><span class="zh">庫阿坎海灘</span></div></td>
+<td class="center"><span class="tier tier-B">B</span></td>
+<td><a class="google" href="https://www.google.com/search?q=C%E1%BB%ADa%20C%E1%BA%A1n%20Beach%20%E5%BA%AB%E9%98%BF%E5%9D%8E%E6%B5%B7%E7%81%98%20C%E1%BB%ADa%20C%E1%BA%A1n%20%E5%BA%AB%E9%98%BF%E5%9D%8E%20Phu%20Quoc%20Google%20reviews" target="_blank" rel="noopener">⭐ 4.4</a></td>
+<td><a class="google" href="https://www.google.com/search?q=C%E1%BB%ADa%20C%E1%BA%A1n%20Beach%20%E5%BA%AB%E9%98%BF%E5%9D%8E%E6%B5%B7%E7%81%98%20C%E1%BB%ADa%20C%E1%BA%A1n%20%E5%BA%AB%E9%98%BF%E5%9D%8E%20Phu%20Quoc" target="_blank" rel="noopener">查看介紹</a></td>
+<td>海灘</td><td>1–2 小時</td><td>下午</td><td>免費</td>
+<td>海灘／自然</td><td class="note">適合順路停留，不必特別拉長行程。</td>
+<td><a class="mapnav" href="https://www.google.com/maps/search/?api=1&query=C%E1%BB%ADa%20C%E1%BA%A1n%20Beach%20%E5%BA%AB%E9%98%BF%E5%9D%8E%E6%B5%B7%E7%81%98%20C%E1%BB%ADa%20C%E1%BA%A1n%20%E5%BA%AB%E9%98%BF%E5%9D%8E%20Phu%20Quoc" target="_blank" rel="noopener">導航</a></td></tr></tbody></table></div></section><section class="section central" data-section-region="中島">
+<div class="sticky-group"><h2>中島｜Dương Đông 楊東 <span class="count">(6)</span></h2>
+<div class="head-wrap"><div class="head-track"><table><colgroup><col class="c1"><col class="c2"><col class="c3"><col class="c4"><col class="c5"><col class="c6"><col class="c7"><col class="c8"><col class="c9"><col class="c10"><col class="c11"><col class="c12"><col class="c13"><col class="c14"></colgroup><thead><tr>
+<th>勾選</th><th>項次</th><th>區域</th><th>景點（原文＋中文）</th><th>推薦</th><th>Google</th><th>查看介紹</th>
+<th>景點類型</th><th>停留時間</th><th>推薦時段</th><th>門票</th><th>特色</th><th>備註</th><th>導航</th>
+</tr></thead></table></div></div></div>
+<div class="body-wrap"><table><colgroup><col class="c1"><col class="c2"><col class="c3"><col class="c4"><col class="c5"><col class="c6"><col class="c7"><col class="c8"><col class="c9"><col class="c10"><col class="c11"><col class="c12"><col class="c13"><col class="c14"></colgroup><tbody><tr class="attraction-row" data-id="11" data-region="中島" data-type="文化／寺廟" data-tier="S" data-time="傍晚～日落" data-feature="文化／海景／日落" data-search="Dinh Cậu Temple 舅舅廟／丁舅廟 Dương Đông 楊東 Phu Quoc 文化／寺廟 楊東代表性地標，傍晚可銜接夜市。">
+<td class="center"><input class="pick" type="checkbox" data-id="11"></td><td class="center">11</td>
+<td><div class="wrap3">中島<br>Dương Đông 楊東</div></td>
+<td><div class="wrap3"><span class="name">Dinh Cậu Temple</span><span class="zh">舅舅廟／丁舅廟</span></div></td>
+<td class="center"><span class="tier tier-S">S</span></td>
+<td><a class="google" href="https://www.google.com/search?q=Dinh%20C%E1%BA%ADu%20Temple%20%E8%88%85%E8%88%85%E5%BB%9F%EF%BC%8F%E4%B8%81%E8%88%85%E5%BB%9F%20D%C6%B0%C6%A1ng%20%C4%90%C3%B4ng%20%E6%A5%8A%E6%9D%B1%20Phu%20Quoc%20Google%20reviews" target="_blank" rel="noopener">⭐ 4.5</a></td>
+<td><a class="google" href="https://www.google.com/search?q=Dinh%20C%E1%BA%ADu%20Temple%20%E8%88%85%E8%88%85%E5%BB%9F%EF%BC%8F%E4%B8%81%E8%88%85%E5%BB%9F%20D%C6%B0%C6%A1ng%20%C4%90%C3%B4ng%20%E6%A5%8A%E6%9D%B1%20Phu%20Quoc" target="_blank" rel="noopener">查看介紹</a></td>
+<td>文化／寺廟</td><td>45–90 分</td><td>傍晚～日落</td><td>免費</td>
+<td>文化／海景／日落</td><td class="note">楊東代表性地標，傍晚可銜接夜市。</td>
+<td><a class="mapnav" href="https://www.google.com/maps/search/?api=1&query=Dinh%20C%E1%BA%ADu%20Temple%20%E8%88%85%E8%88%85%E5%BB%9F%EF%BC%8F%E4%B8%81%E8%88%85%E5%BB%9F%20D%C6%B0%C6%A1ng%20%C4%90%C3%B4ng%20%E6%A5%8A%E6%9D%B1%20Phu%20Quoc" target="_blank" rel="noopener">導航</a></td></tr><tr class="attraction-row" data-id="12" data-region="中島" data-type="傳統市場" data-tier="A" data-time="上午" data-feature="市場／在地生活／文化" data-search="Dương Đông Market 楊東市場 Dương Đông 楊東 Phu Quoc 傳統市場 觀察當地生活與市場文化。">
+<td class="center"><input class="pick" type="checkbox" data-id="12"></td><td class="center">12</td>
+<td><div class="wrap3">中島<br>Dương Đông 楊東</div></td>
+<td><div class="wrap3"><span class="name">Dương Đông Market</span><span class="zh">楊東市場</span></div></td>
+<td class="center"><span class="tier tier-A">A</span></td>
+<td><a class="google" href="https://www.google.com/search?q=D%C6%B0%C6%A1ng%20%C4%90%C3%B4ng%20Market%20%E6%A5%8A%E6%9D%B1%E5%B8%82%E5%A0%B4%20D%C6%B0%C6%A1ng%20%C4%90%C3%B4ng%20%E6%A5%8A%E6%9D%B1%20Phu%20Quoc%20Google%20reviews" target="_blank" rel="noopener">⭐ 4.2</a></td>
+<td><a class="google" href="https://www.google.com/search?q=D%C6%B0%C6%A1ng%20%C4%90%C3%B4ng%20Market%20%E6%A5%8A%E6%9D%B1%E5%B8%82%E5%A0%B4%20D%C6%B0%C6%A1ng%20%C4%90%C3%B4ng%20%E6%A5%8A%E6%9D%B1%20Phu%20Quoc" target="_blank" rel="noopener">查看介紹</a></td>
+<td>傳統市場</td><td>1–2 小時</td><td>上午</td><td>免費</td>
+<td>市場／在地生活／文化</td><td class="note">觀察當地生活與市場文化。</td>
+<td><a class="mapnav" href="https://www.google.com/maps/search/?api=1&query=D%C6%B0%C6%A1ng%20%C4%90%C3%B4ng%20Market%20%E6%A5%8A%E6%9D%B1%E5%B8%82%E5%A0%B4%20D%C6%B0%C6%A1ng%20%C4%90%C3%B4ng%20%E6%A5%8A%E6%9D%B1%20Phu%20Quoc" target="_blank" rel="noopener">導航</a></td></tr><tr class="attraction-row" data-id="13" data-region="中島" data-type="夜市" data-tier="S" data-time="晚上" data-feature="夜市／散步／在地氣氛" data-search="Phu Quoc Night Market 富國島夜市 Dương Đông 楊東 Phu Quoc 夜市 晚間熱門區域，可與丁舅廟一起安排。">
+<td class="center"><input class="pick" type="checkbox" data-id="13"></td><td class="center">13</td>
+<td><div class="wrap3">中島<br>Dương Đông 楊東</div></td>
+<td><div class="wrap3"><span class="name">Phu Quoc Night Market</span><span class="zh">富國島夜市</span></div></td>
+<td class="center"><span class="tier tier-S">S</span></td>
+<td><a class="google" href="https://www.google.com/search?q=Phu%20Quoc%20Night%20Market%20%E5%AF%8C%E5%9C%8B%E5%B3%B6%E5%A4%9C%E5%B8%82%20D%C6%B0%C6%A1ng%20%C4%90%C3%B4ng%20%E6%A5%8A%E6%9D%B1%20Phu%20Quoc%20Google%20reviews" target="_blank" rel="noopener">⭐ 4.2</a></td>
+<td><a class="google" href="https://www.google.com/search?q=Phu%20Quoc%20Night%20Market%20%E5%AF%8C%E5%9C%8B%E5%B3%B6%E5%A4%9C%E5%B8%82%20D%C6%B0%C6%A1ng%20%C4%90%C3%B4ng%20%E6%A5%8A%E6%9D%B1%20Phu%20Quoc" target="_blank" rel="noopener">查看介紹</a></td>
+<td>夜市</td><td>2–3 小時</td><td>晚上</td><td>免費</td>
+<td>夜市／散步／在地氣氛</td><td class="note">晚間熱門區域，可與丁舅廟一起安排。</td>
+<td><a class="mapnav" href="https://www.google.com/maps/search/?api=1&query=Phu%20Quoc%20Night%20Market%20%E5%AF%8C%E5%9C%8B%E5%B3%B6%E5%A4%9C%E5%B8%82%20D%C6%B0%C6%A1ng%20%C4%90%C3%B4ng%20%E6%A5%8A%E6%9D%B1%20Phu%20Quoc" target="_blank" rel="noopener">導航</a></td></tr><tr class="attraction-row" data-id="14" data-region="中島" data-type="博物館" data-tier="B" data-time="白天" data-feature="歷史／文化／室內" data-search="Coi Nguon Museum 源泉博物館 Dương Đông 楊東 Phu Quoc 博物館 認識富國島歷史與地方文化的室內景點。">
+<td class="center"><input class="pick" type="checkbox" data-id="14"></td><td class="center">14</td>
+<td><div class="wrap3">中島<br>Dương Đông 楊東</div></td>
+<td><div class="wrap3"><span class="name">Coi Nguon Museum</span><span class="zh">源泉博物館</span></div></td>
+<td class="center"><span class="tier tier-B">B</span></td>
+<td><a class="google" href="https://www.google.com/search?q=Coi%20Nguon%20Museum%20%E6%BA%90%E6%B3%89%E5%8D%9A%E7%89%A9%E9%A4%A8%20D%C6%B0%C6%A1ng%20%C4%90%C3%B4ng%20%E6%A5%8A%E6%9D%B1%20Phu%20Quoc%20Google%20reviews" target="_blank" rel="noopener">⭐ 4.1</a></td>
+<td><a class="google" href="https://www.google.com/search?q=Coi%20Nguon%20Museum%20%E6%BA%90%E6%B3%89%E5%8D%9A%E7%89%A9%E9%A4%A8%20D%C6%B0%C6%A1ng%20%C4%90%C3%B4ng%20%E6%A5%8A%E6%9D%B1%20Phu%20Quoc" target="_blank" rel="noopener">查看介紹</a></td>
+<td>博物館</td><td>1–2 小時</td><td>白天</td><td>需門票</td>
+<td>歷史／文化／室內</td><td class="note">認識富國島歷史與地方文化的室內景點。</td>
+<td><a class="mapnav" href="https://www.google.com/maps/search/?api=1&query=Coi%20Nguon%20Museum%20%E6%BA%90%E6%B3%89%E5%8D%9A%E7%89%A9%E9%A4%A8%20D%C6%B0%C6%A1ng%20%C4%90%C3%B4ng%20%E6%A5%8A%E6%9D%B1%20Phu%20Quoc" target="_blank" rel="noopener">導航</a></td></tr><tr class="attraction-row" data-id="15" data-region="中島" data-type="自然景觀" data-tier="A" data-time="上午～下午" data-feature="森林／自然／健行" data-search="Phu Quoc National Park 富國島國家公園 Cửa Dương 庫阿陽 Phu Quoc 自然景觀 範圍很大，實際體驗依進入區域與路線而異。">
+<td class="center"><input class="pick" type="checkbox" data-id="15"></td><td class="center">15</td>
+<td><div class="wrap3">中島<br>Cửa Dương 庫阿陽</div></td>
+<td><div class="wrap3"><span class="name">Phu Quoc National Park</span><span class="zh">富國島國家公園</span></div></td>
+<td class="center"><span class="tier tier-A">A</span></td>
+<td><a class="google" href="https://www.google.com/search?q=Phu%20Quoc%20National%20Park%20%E5%AF%8C%E5%9C%8B%E5%B3%B6%E5%9C%8B%E5%AE%B6%E5%85%AC%E5%9C%92%20C%E1%BB%ADa%20D%C6%B0%C6%A1ng%20%E5%BA%AB%E9%98%BF%E9%99%BD%20Phu%20Quoc%20Google%20reviews" target="_blank" rel="noopener">⭐ 4.4</a></td>
+<td><a class="google" href="https://www.google.com/search?q=Phu%20Quoc%20National%20Park%20%E5%AF%8C%E5%9C%8B%E5%B3%B6%E5%9C%8B%E5%AE%B6%E5%85%AC%E5%9C%92%20C%E1%BB%ADa%20D%C6%B0%C6%A1ng%20%E5%BA%AB%E9%98%BF%E9%99%BD%20Phu%20Quoc" target="_blank" rel="noopener">查看介紹</a></td>
+<td>自然景觀</td><td>2–4 小時</td><td>上午～下午</td><td>免費／依活動</td>
+<td>森林／自然／健行</td><td class="note">範圍很大，實際體驗依進入區域與路線而異。</td>
+<td><a class="mapnav" href="https://www.google.com/maps/search/?api=1&query=Phu%20Quoc%20National%20Park%20%E5%AF%8C%E5%9C%8B%E5%B3%B6%E5%9C%8B%E5%AE%B6%E5%85%AC%E5%9C%92%20C%E1%BB%ADa%20D%C6%B0%C6%A1ng%20%E5%BA%AB%E9%98%BF%E9%99%BD%20Phu%20Quoc" target="_blank" rel="noopener">導航</a></td></tr><tr class="attraction-row" data-id="16" data-region="中島" data-type="瀑布／自然" data-tier="A" data-time="上午～下午" data-feature="瀑布／森林／健行" data-search="Suối Đá Bàn 石盤溪瀑布 Cửa Dương 庫阿陽 Phu Quoc 瀑布／自然 雨季水量通常較佳，步道需注意濕滑。">
+<td class="center"><input class="pick" type="checkbox" data-id="16"></td><td class="center">16</td>
+<td><div class="wrap3">中島<br>Cửa Dương 庫阿陽</div></td>
+<td><div class="wrap3"><span class="name">Suối Đá Bàn</span><span class="zh">石盤溪瀑布</span></div></td>
+<td class="center"><span class="tier tier-A">A</span></td>
+<td><a class="google" href="https://www.google.com/search?q=Su%E1%BB%91i%20%C4%90%C3%A1%20B%C3%A0n%20%E7%9F%B3%E7%9B%A4%E6%BA%AA%E7%80%91%E5%B8%83%20C%E1%BB%ADa%20D%C6%B0%C6%A1ng%20%E5%BA%AB%E9%98%BF%E9%99%BD%20Phu%20Quoc%20Google%20reviews" target="_blank" rel="noopener">⭐ 4.2</a></td>
+<td><a class="google" href="https://www.google.com/search?q=Su%E1%BB%91i%20%C4%90%C3%A1%20B%C3%A0n%20%E7%9F%B3%E7%9B%A4%E6%BA%AA%E7%80%91%E5%B8%83%20C%E1%BB%ADa%20D%C6%B0%C6%A1ng%20%E5%BA%AB%E9%98%BF%E9%99%BD%20Phu%20Quoc" target="_blank" rel="noopener">查看介紹</a></td>
+<td>瀑布／自然</td><td>2–3 小時</td><td>上午～下午</td><td>可能收費</td>
+<td>瀑布／森林／健行</td><td class="note">雨季水量通常較佳，步道需注意濕滑。</td>
+<td><a class="mapnav" href="https://www.google.com/maps/search/?api=1&query=Su%E1%BB%91i%20%C4%90%C3%A1%20B%C3%A0n%20%E7%9F%B3%E7%9B%A4%E6%BA%AA%E7%80%91%E5%B8%83%20C%E1%BB%ADa%20D%C6%B0%C6%A1ng%20%E5%BA%AB%E9%98%BF%E9%99%BD%20Phu%20Quoc" target="_blank" rel="noopener">導航</a></td></tr></tbody></table></div></section><section class="section midsouth" data-section-region="中南">
+<div class="sticky-group"><h2>中南｜Long Beach 長灘・Dương Tơ 楊思 <span class="count">(4)</span></h2>
+<div class="head-wrap"><div class="head-track"><table><colgroup><col class="c1"><col class="c2"><col class="c3"><col class="c4"><col class="c5"><col class="c6"><col class="c7"><col class="c8"><col class="c9"><col class="c10"><col class="c11"><col class="c12"><col class="c13"><col class="c14"></colgroup><thead><tr>
+<th>勾選</th><th>項次</th><th>區域</th><th>景點（原文＋中文）</th><th>推薦</th><th>Google</th><th>查看介紹</th>
+<th>景點類型</th><th>停留時間</th><th>推薦時段</th><th>門票</th><th>特色</th><th>備註</th><th>導航</th>
+</tr></thead></table></div></div></div>
+<div class="body-wrap"><table><colgroup><col class="c1"><col class="c2"><col class="c3"><col class="c4"><col class="c5"><col class="c6"><col class="c7"><col class="c8"><col class="c9"><col class="c10"><col class="c11"><col class="c12"><col class="c13"><col class="c14"></colgroup><tbody><tr class="attraction-row" data-id="17" data-region="中南" data-type="瀑布／自然" data-tier="S" data-time="上午～下午" data-feature="瀑布／森林／健行" data-search="Suối Tranh 爭溪瀑布 Dương Tơ 楊思 Phu Quoc 瀑布／自然 富國島代表性溪瀑景點之一，雨季較有水。">
+<td class="center"><input class="pick" type="checkbox" data-id="17"></td><td class="center">17</td>
+<td><div class="wrap3">中南<br>Dương Tơ 楊思</div></td>
+<td><div class="wrap3"><span class="name">Suối Tranh</span><span class="zh">爭溪瀑布</span></div></td>
+<td class="center"><span class="tier tier-S">S</span></td>
+<td><a class="google" href="https://www.google.com/search?q=Su%E1%BB%91i%20Tranh%20%E7%88%AD%E6%BA%AA%E7%80%91%E5%B8%83%20D%C6%B0%C6%A1ng%20T%C6%A1%20%E6%A5%8A%E6%80%9D%20Phu%20Quoc%20Google%20reviews" target="_blank" rel="noopener">⭐ 4.1</a></td>
+<td><a class="google" href="https://www.google.com/search?q=Su%E1%BB%91i%20Tranh%20%E7%88%AD%E6%BA%AA%E7%80%91%E5%B8%83%20D%C6%B0%C6%A1ng%20T%C6%A1%20%E6%A5%8A%E6%80%9D%20Phu%20Quoc" target="_blank" rel="noopener">查看介紹</a></td>
+<td>瀑布／自然</td><td>2–3 小時</td><td>上午～下午</td><td>需門票</td>
+<td>瀑布／森林／健行</td><td class="note">富國島代表性溪瀑景點之一，雨季較有水。</td>
+<td><a class="mapnav" href="https://www.google.com/maps/search/?api=1&query=Su%E1%BB%91i%20Tranh%20%E7%88%AD%E6%BA%AA%E7%80%91%E5%B8%83%20D%C6%B0%C6%A1ng%20T%C6%A1%20%E6%A5%8A%E6%80%9D%20Phu%20Quoc" target="_blank" rel="noopener">導航</a></td></tr><tr class="attraction-row" data-id="18" data-region="中南" data-type="海灘" data-tier="A" data-time="下午～日落" data-feature="海灘／日落／放鬆" data-search="Long Beach 長灘 Long Beach 長灘 Phu Quoc 海灘 西岸長海灘帶，適合看夕陽。">
+<td class="center"><input class="pick" type="checkbox" data-id="18"></td><td class="center">18</td>
+<td><div class="wrap3">中南<br>Long Beach 長灘</div></td>
+<td><div class="wrap3"><span class="name">Long Beach</span><span class="zh">長灘</span></div></td>
+<td class="center"><span class="tier tier-A">A</span></td>
+<td><a class="google" href="https://www.google.com/search?q=Long%20Beach%20%E9%95%B7%E7%81%98%20Long%20Beach%20%E9%95%B7%E7%81%98%20Phu%20Quoc%20Google%20reviews" target="_blank" rel="noopener">⭐ 4.4</a></td>
+<td><a class="google" href="https://www.google.com/search?q=Long%20Beach%20%E9%95%B7%E7%81%98%20Long%20Beach%20%E9%95%B7%E7%81%98%20Phu%20Quoc" target="_blank" rel="noopener">查看介紹</a></td>
+<td>海灘</td><td>2–4 小時</td><td>下午～日落</td><td>免費</td>
+<td>海灘／日落／放鬆</td><td class="note">西岸長海灘帶，適合看夕陽。</td>
+<td><a class="mapnav" href="https://www.google.com/maps/search/?api=1&query=Long%20Beach%20%E9%95%B7%E7%81%98%20Long%20Beach%20%E9%95%B7%E7%81%98%20Phu%20Quoc" target="_blank" rel="noopener">導航</a></td></tr><tr class="attraction-row" data-id="19" data-region="中南" data-type="產業文化" data-tier="B" data-time="白天" data-feature="珍珠／產業／展示" data-search="Phu Quoc Pearl Farm 富國島珍珠養殖場 Dương Tơ 楊思 Phu Quoc 產業文化 了解珍珠養殖與加工；購物不是本階段重點。">
+<td class="center"><input class="pick" type="checkbox" data-id="19"></td><td class="center">19</td>
+<td><div class="wrap3">中南<br>Dương Tơ 楊思</div></td>
+<td><div class="wrap3"><span class="name">Phu Quoc Pearl Farm</span><span class="zh">富國島珍珠養殖場</span></div></td>
+<td class="center"><span class="tier tier-B">B</span></td>
+<td><a class="google" href="https://www.google.com/search?q=Phu%20Quoc%20Pearl%20Farm%20%E5%AF%8C%E5%9C%8B%E5%B3%B6%E7%8F%8D%E7%8F%A0%E9%A4%8A%E6%AE%96%E5%A0%B4%20D%C6%B0%C6%A1ng%20T%C6%A1%20%E6%A5%8A%E6%80%9D%20Phu%20Quoc%20Google%20reviews" target="_blank" rel="noopener">⭐ 4.2</a></td>
+<td><a class="google" href="https://www.google.com/search?q=Phu%20Quoc%20Pearl%20Farm%20%E5%AF%8C%E5%9C%8B%E5%B3%B6%E7%8F%8D%E7%8F%A0%E9%A4%8A%E6%AE%96%E5%A0%B4%20D%C6%B0%C6%A1ng%20T%C6%A1%20%E6%A5%8A%E6%80%9D%20Phu%20Quoc" target="_blank" rel="noopener">查看介紹</a></td>
+<td>產業文化</td><td>1–1.5 小時</td><td>白天</td><td>免費</td>
+<td>珍珠／產業／展示</td><td class="note">了解珍珠養殖與加工；購物不是本階段重點。</td>
+<td><a class="mapnav" href="https://www.google.com/maps/search/?api=1&query=Phu%20Quoc%20Pearl%20Farm%20%E5%AF%8C%E5%9C%8B%E5%B3%B6%E7%8F%8D%E7%8F%A0%E9%A4%8A%E6%AE%96%E5%A0%B4%20D%C6%B0%C6%A1ng%20T%C6%A1%20%E6%A5%8A%E6%80%9D%20Phu%20Quoc" target="_blank" rel="noopener">導航</a></td></tr><tr class="attraction-row" data-id="20" data-region="中南" data-type="產業文化" data-tier="A" data-time="上午～下午" data-feature="農園／在地產業／拍照" data-search="Phu Quoc Pepper Farm 富國島胡椒園 Dương Tơ 楊思 Phu Quoc 產業文化 富國島代表性農產體驗。">
+<td class="center"><input class="pick" type="checkbox" data-id="20"></td><td class="center">20</td>
+<td><div class="wrap3">中南<br>Dương Tơ 楊思</div></td>
+<td><div class="wrap3"><span class="name">Phu Quoc Pepper Farm</span><span class="zh">富國島胡椒園</span></div></td>
+<td class="center"><span class="tier tier-A">A</span></td>
+<td><a class="google" href="https://www.google.com/search?q=Phu%20Quoc%20Pepper%20Farm%20%E5%AF%8C%E5%9C%8B%E5%B3%B6%E8%83%A1%E6%A4%92%E5%9C%92%20D%C6%B0%C6%A1ng%20T%C6%A1%20%E6%A5%8A%E6%80%9D%20Phu%20Quoc%20Google%20reviews" target="_blank" rel="noopener">⭐ 4.4</a></td>
+<td><a class="google" href="https://www.google.com/search?q=Phu%20Quoc%20Pepper%20Farm%20%E5%AF%8C%E5%9C%8B%E5%B3%B6%E8%83%A1%E6%A4%92%E5%9C%92%20D%C6%B0%C6%A1ng%20T%C6%A1%20%E6%A5%8A%E6%80%9D%20Phu%20Quoc" target="_blank" rel="noopener">查看介紹</a></td>
+<td>產業文化</td><td>1–1.5 小時</td><td>上午～下午</td><td>免費／依園區</td>
+<td>農園／在地產業／拍照</td><td class="note">富國島代表性農產體驗。</td>
+<td><a class="mapnav" href="https://www.google.com/maps/search/?api=1&query=Phu%20Quoc%20Pepper%20Farm%20%E5%AF%8C%E5%9C%8B%E5%B3%B6%E8%83%A1%E6%A4%92%E5%9C%92%20D%C6%B0%C6%A1ng%20T%C6%A1%20%E6%A5%8A%E6%80%9D%20Phu%20Quoc" target="_blank" rel="noopener">導航</a></td></tr></tbody></table></div></section><section class="section east" data-section-region="東島">
+<div class="sticky-group"><h2>東島｜Hàm Ninh 咸寧 <span class="count">(2)</span></h2>
+<div class="head-wrap"><div class="head-track"><table><colgroup><col class="c1"><col class="c2"><col class="c3"><col class="c4"><col class="c5"><col class="c6"><col class="c7"><col class="c8"><col class="c9"><col class="c10"><col class="c11"><col class="c12"><col class="c13"><col class="c14"></colgroup><thead><tr>
+<th>勾選</th><th>項次</th><th>區域</th><th>景點（原文＋中文）</th><th>推薦</th><th>Google</th><th>查看介紹</th>
+<th>景點類型</th><th>停留時間</th><th>推薦時段</th><th>門票</th><th>特色</th><th>備註</th><th>導航</th>
+</tr></thead></table></div></div></div>
+<div class="body-wrap"><table><colgroup><col class="c1"><col class="c2"><col class="c3"><col class="c4"><col class="c5"><col class="c6"><col class="c7"><col class="c8"><col class="c9"><col class="c10"><col class="c11"><col class="c12"><col class="c13"><col class="c14"></colgroup><tbody><tr class="attraction-row" data-id="21" data-region="東島" data-type="漁村／文化" data-tier="S" data-time="上午～下午" data-feature="漁村／海景／在地文化" data-search="Hàm Ninh Fishing Village 咸寧漁村 Hàm Ninh 咸寧 Phu Quoc 漁村／文化 東岸代表性漁村，可搭配海鮮行程。">
+<td class="center"><input class="pick" type="checkbox" data-id="21"></td><td class="center">21</td>
+<td><div class="wrap3">東島<br>Hàm Ninh 咸寧</div></td>
+<td><div class="wrap3"><span class="name">Hàm Ninh Fishing Village</span><span class="zh">咸寧漁村</span></div></td>
+<td class="center"><span class="tier tier-S">S</span></td>
+<td><a class="google" href="https://www.google.com/search?q=H%C3%A0m%20Ninh%20Fishing%20Village%20%E5%92%B8%E5%AF%A7%E6%BC%81%E6%9D%91%20H%C3%A0m%20Ninh%20%E5%92%B8%E5%AF%A7%20Phu%20Quoc%20Google%20reviews" target="_blank" rel="noopener">⭐ 4.2</a></td>
+<td><a class="google" href="https://www.google.com/search?q=H%C3%A0m%20Ninh%20Fishing%20Village%20%E5%92%B8%E5%AF%A7%E6%BC%81%E6%9D%91%20H%C3%A0m%20Ninh%20%E5%92%B8%E5%AF%A7%20Phu%20Quoc" target="_blank" rel="noopener">查看介紹</a></td>
+<td>漁村／文化</td><td>2–3 小時</td><td>上午～下午</td><td>免費</td>
+<td>漁村／海景／在地文化</td><td class="note">東岸代表性漁村，可搭配海鮮行程。</td>
+<td><a class="mapnav" href="https://www.google.com/maps/search/?api=1&query=H%C3%A0m%20Ninh%20Fishing%20Village%20%E5%92%B8%E5%AF%A7%E6%BC%81%E6%9D%91%20H%C3%A0m%20Ninh%20%E5%92%B8%E5%AF%A7%20Phu%20Quoc" target="_blank" rel="noopener">導航</a></td></tr><tr class="attraction-row" data-id="22" data-region="東島" data-type="瀑布／自然" data-tier="B" data-time="上午～下午" data-feature="溪流／森林／健行" data-search="Suối Tiên 仙溪 Hàm Ninh 咸寧 Phu Quoc 瀑布／自然 較偏自然型景點，需視天候與路況。">
+<td class="center"><input class="pick" type="checkbox" data-id="22"></td><td class="center">22</td>
+<td><div class="wrap3">東島<br>Hàm Ninh 咸寧</div></td>
+<td><div class="wrap3"><span class="name">Suối Tiên</span><span class="zh">仙溪</span></div></td>
+<td class="center"><span class="tier tier-B">B</span></td>
+<td><a class="google" href="https://www.google.com/search?q=Su%E1%BB%91i%20Ti%C3%AAn%20%E4%BB%99%E6%BA%AA%20H%C3%A0m%20Ninh%20%E5%92%B8%E5%AF%A7%20Phu%20Quoc%20Google%20reviews" target="_blank" rel="noopener">⭐ 4.2</a></td>
+<td><a class="google" href="https://www.google.com/search?q=Su%E1%BB%91i%20Ti%C3%AAn%20%E4%BB%99%E6%BA%AA%20H%C3%A0m%20Ninh%20%E5%92%B8%E5%AF%A7%20Phu%20Quoc" target="_blank" rel="noopener">查看介紹</a></td>
+<td>瀑布／自然</td><td>2–3 小時</td><td>上午～下午</td><td>免費／可能收費</td>
+<td>溪流／森林／健行</td><td class="note">較偏自然型景點，需視天候與路況。</td>
+<td><a class="mapnav" href="https://www.google.com/maps/search/?api=1&query=Su%E1%BB%91i%20Ti%C3%AAn%20%E4%BB%99%E6%BA%AA%20H%C3%A0m%20Ninh%20%E5%92%B8%E5%AF%A7%20Phu%20Quoc" target="_blank" rel="noopener">導航</a></td></tr></tbody></table></div></section><section class="section south" data-section-region="南島">
+<div class="sticky-group"><h2>南島｜An Thới 安泰・Sunset Town 日落小鎮 <span class="count">(12)</span></h2>
+<div class="head-wrap"><div class="head-track"><table><colgroup><col class="c1"><col class="c2"><col class="c3"><col class="c4"><col class="c5"><col class="c6"><col class="c7"><col class="c8"><col class="c9"><col class="c10"><col class="c11"><col class="c12"><col class="c13"><col class="c14"></colgroup><thead><tr>
+<th>勾選</th><th>項次</th><th>區域</th><th>景點（原文＋中文）</th><th>推薦</th><th>Google</th><th>查看介紹</th>
+<th>景點類型</th><th>停留時間</th><th>推薦時段</th><th>門票</th><th>特色</th><th>備註</th><th>導航</th>
+</tr></thead></table></div></div></div>
+<div class="body-wrap"><table><colgroup><col class="c1"><col class="c2"><col class="c3"><col class="c4"><col class="c5"><col class="c6"><col class="c7"><col class="c8"><col class="c9"><col class="c10"><col class="c11"><col class="c12"><col class="c13"><col class="c14"></colgroup><tbody><tr class="attraction-row" data-id="23" data-region="南島" data-type="主題樂園／海島" data-tier="S+" data-time="上午～下午" data-feature="纜車／海島／親子／遊樂" data-search="Sun World Hon Thom 太陽世界香島自然公園 An Thới 安泰 Phu Quoc 主題樂園／海島 南島核心大型景點，可與纜車、Aquatopia 一起安排。">
+<td class="center"><input class="pick" type="checkbox" data-id="23"></td><td class="center">23</td>
+<td><div class="wrap3">南島<br>An Thới 安泰</div></td>
+<td><div class="wrap3"><span class="name">Sun World Hon Thom</span><span class="zh">太陽世界香島自然公園</span></div></td>
+<td class="center"><span class="tier tier-Splus">S+</span></td>
+<td><a class="google" href="https://www.google.com/search?q=Sun%20World%20Hon%20Thom%20%E5%A4%AA%E9%99%BD%E4%B8%96%E7%95%8C%E9%A6%99%E5%B3%B6%E8%87%AA%E7%84%B6%E5%85%AC%E5%9C%92%20An%20Th%E1%BB%9Bi%20%E5%AE%89%E6%B3%B0%20Phu%20Quoc%20Google%20reviews" target="_blank" rel="noopener">⭐ 4.7</a></td>
+<td><a class="google" href="https://www.google.com/search?q=Sun%20World%20Hon%20Thom%20%E5%A4%AA%E9%99%BD%E4%B8%96%E7%95%8C%E9%A6%99%E5%B3%B6%E8%87%AA%E7%84%B6%E5%85%AC%E5%9C%92%20An%20Th%E1%BB%9Bi%20%E5%AE%89%E6%B3%B0%20Phu%20Quoc" target="_blank" rel="noopener">查看介紹</a></td>
+<td>主題樂園／海島</td><td>5–7 小時</td><td>上午～下午</td><td>需門票</td>
+<td>纜車／海島／親子／遊樂</td><td class="note">南島核心大型景點，可與纜車、Aquatopia 一起安排。</td>
+<td><a class="mapnav" href="https://www.google.com/maps/search/?api=1&query=Sun%20World%20Hon%20Thom%20%E5%A4%AA%E9%99%BD%E4%B8%96%E7%95%8C%E9%A6%99%E5%B3%B6%E8%87%AA%E7%84%B6%E5%85%AC%E5%9C%92%20An%20Th%E1%BB%9Bi%20%E5%AE%89%E6%B3%B0%20Phu%20Quoc" target="_blank" rel="noopener">導航</a></td></tr><tr class="attraction-row" data-id="24" data-region="南島" data-type="纜車／景觀" data-tier="S+" data-time="上午／下午" data-feature="高空景觀／海景／拍照" data-search="Hon Thom Cable Car 香島跨海纜車 An Thới 安泰 Phu Quoc 纜車／景觀 連接安泰與香島，重點是高空俯瞰安泰群島。">
+<td class="center"><input class="pick" type="checkbox" data-id="24"></td><td class="center">24</td>
+<td><div class="wrap3">南島<br>An Thới 安泰</div></td>
+<td><div class="wrap3"><span class="name">Hon Thom Cable Car</span><span class="zh">香島跨海纜車</span></div></td>
+<td class="center"><span class="tier tier-Splus">S+</span></td>
+<td><a class="google" href="https://www.google.com/search?q=Hon%20Thom%20Cable%20Car%20%E9%A6%99%E5%B3%B6%E8%B7%A8%E6%B5%B7%E7%BA%9C%E8%BB%8A%20An%20Th%E1%BB%9Bi%20%E5%AE%89%E6%B3%B0%20Phu%20Quoc%20Google%20reviews" target="_blank" rel="noopener">⭐ 4.7</a></td>
+<td><a class="google" href="https://www.google.com/search?q=Hon%20Thom%20Cable%20Car%20%E9%A6%99%E5%B3%B6%E8%B7%A8%E6%B5%B7%E7%BA%9C%E8%BB%8A%20An%20Th%E1%BB%9Bi%20%E5%AE%89%E6%B3%B0%20Phu%20Quoc" target="_blank" rel="noopener">查看介紹</a></td>
+<td>纜車／景觀</td><td>30–60 分</td><td>上午／下午</td><td>需門票</td>
+<td>高空景觀／海景／拍照</td><td class="note">連接安泰與香島，重點是高空俯瞰安泰群島。</td>
+<td><a class="mapnav" href="https://www.google.com/maps/search/?api=1&query=Hon%20Thom%20Cable%20Car%20%E9%A6%99%E5%B3%B6%E8%B7%A8%E6%B5%B7%E7%BA%9C%E8%BB%8A%20An%20Th%E1%BB%9Bi%20%E5%AE%89%E6%B3%B0%20Phu%20Quoc" target="_blank" rel="noopener">導航</a></td></tr><tr class="attraction-row" data-id="25" data-region="南島" data-type="水上樂園" data-tier="S+" data-time="上午～下午" data-feature="玩水／親子／刺激設施" data-search="Aquatopia Water Park Aquatopia 水上樂園 Hòn Thơm 香島 Phu Quoc 水上樂園 適合與香島纜車安排同日。">
+<td class="center"><input class="pick" type="checkbox" data-id="25"></td><td class="center">25</td>
+<td><div class="wrap3">南島<br>Hòn Thơm 香島</div></td>
+<td><div class="wrap3"><span class="name">Aquatopia Water Park</span><span class="zh">Aquatopia 水上樂園</span></div></td>
+<td class="center"><span class="tier tier-Splus">S+</span></td>
+<td><a class="google" href="https://www.google.com/search?q=Aquatopia%20Water%20Park%20Aquatopia%20%E6%B0%B4%E4%B8%8A%E6%A8%82%E5%9C%92%20H%C3%B2n%20Th%C6%A1m%20%E9%A6%99%E5%B3%B6%20Phu%20Quoc%20Google%20reviews" target="_blank" rel="noopener">⭐ 4.7</a></td>
+<td><a class="google" href="https://www.google.com/search?q=Aquatopia%20Water%20Park%20Aquatopia%20%E6%B0%B4%E4%B8%8A%E6%A8%82%E5%9C%92%20H%C3%B2n%20Th%C6%A1m%20%E9%A6%99%E5%B3%B6%20Phu%20Quoc" target="_blank" rel="noopener">查看介紹</a></td>
+<td>水上樂園</td><td>3–5 小時</td><td>上午～下午</td><td>套票／需門票</td>
+<td>玩水／親子／刺激設施</td><td class="note">適合與香島纜車安排同日。</td>
+<td><a class="mapnav" href="https://www.google.com/maps/search/?api=1&query=Aquatopia%20Water%20Park%20Aquatopia%20%E6%B0%B4%E4%B8%8A%E6%A8%82%E5%9C%92%20H%C3%B2n%20Th%C6%A1m%20%E9%A6%99%E5%B3%B6%20Phu%20Quoc" target="_blank" rel="noopener">導航</a></td></tr><tr class="attraction-row" data-id="26" data-region="南島" data-type="建築／娛樂街區" data-tier="S+" data-time="下午～晚上" data-feature="建築／日落／夜景／拍照" data-search="Sunset Town Phu Quoc 富國島日落小鎮 Sunset Town 日落小鎮 Phu Quoc 建築／娛樂街區 南島核心區，傍晚到夜間最有氣氛。">
+<td class="center"><input class="pick" type="checkbox" data-id="26"></td><td class="center">26</td>
+<td><div class="wrap3">南島<br>Sunset Town 日落小鎮</div></td>
+<td><div class="wrap3"><span class="name">Sunset Town Phu Quoc</span><span class="zh">富國島日落小鎮</span></div></td>
+<td class="center"><span class="tier tier-Splus">S+</span></td>
+<td><a class="google" href="https://www.google.com/search?q=Sunset%20Town%20Phu%20Quoc%20%E5%AF%8C%E5%9C%8B%E5%B3%B6%E6%97%A5%E8%90%BD%E5%B0%8F%E9%8E%AE%20Sunset%20Town%20%E6%97%A5%E8%90%BD%E5%B0%8F%E9%8E%AE%20Phu%20Quoc%20Google%20reviews" target="_blank" rel="noopener">⭐ 4.7</a></td>
+<td><a class="google" href="https://www.google.com/search?q=Sunset%20Town%20Phu%20Quoc%20%E5%AF%8C%E5%9C%8B%E5%B3%B6%E6%97%A5%E8%90%BD%E5%B0%8F%E9%8E%AE%20Sunset%20Town%20%E6%97%A5%E8%90%BD%E5%B0%8F%E9%8E%AE%20Phu%20Quoc" target="_blank" rel="noopener">查看介紹</a></td>
+<td>建築／娛樂街區</td><td>3–5 小時</td><td>下午～晚上</td><td>免費／部分收費</td>
+<td>建築／日落／夜景／拍照</td><td class="note">南島核心區，傍晚到夜間最有氣氛。</td>
+<td><a class="mapnav" href="https://www.google.com/maps/search/?api=1&query=Sunset%20Town%20Phu%20Quoc%20%E5%AF%8C%E5%9C%8B%E5%B3%B6%E6%97%A5%E8%90%BD%E5%B0%8F%E9%8E%AE%20Sunset%20Town%20%E6%97%A5%E8%90%BD%E5%B0%8F%E9%8E%AE%20Phu%20Quoc" target="_blank" rel="noopener">導航</a></td></tr><tr class="attraction-row" data-id="27" data-region="南島" data-type="地標／建築" data-tier="S+" data-time="日落前後" data-feature="地標／日落／拍照" data-search="Kiss Bridge 親吻橋 Sunset Town 日落小鎮 Phu Quoc 地標／建築 建議配合日落時段。">
+<td class="center"><input class="pick" type="checkbox" data-id="27"></td><td class="center">27</td>
+<td><div class="wrap3">南島<br>Sunset Town 日落小鎮</div></td>
+<td><div class="wrap3"><span class="name">Kiss Bridge</span><span class="zh">親吻橋</span></div></td>
+<td class="center"><span class="tier tier-Splus">S+</span></td>
+<td><a class="google" href="https://www.google.com/search?q=Kiss%20Bridge%20%E8%A6%AA%E5%90%BB%E6%A9%8B%20Sunset%20Town%20%E6%97%A5%E8%90%BD%E5%B0%8F%E9%8E%AE%20Phu%20Quoc%20Google%20reviews" target="_blank" rel="noopener">⭐ 4.6</a></td>
+<td><a class="google" href="https://www.google.com/search?q=Kiss%20Bridge%20%E8%A6%AA%E5%90%BB%E6%A9%8B%20Sunset%20Town%20%E6%97%A5%E8%90%BD%E5%B0%8F%E9%8E%AE%20Phu%20Quoc" target="_blank" rel="noopener">查看介紹</a></td>
+<td>地標／建築</td><td>1–2 小時</td><td>日落前後</td><td>需門票／依方案</td>
+<td>地標／日落／拍照</td><td class="note">建議配合日落時段。</td>
+<td><a class="mapnav" href="https://www.google.com/maps/search/?api=1&query=Kiss%20Bridge%20%E8%A6%AA%E5%90%BB%E6%A9%8B%20Sunset%20Town%20%E6%97%A5%E8%90%BD%E5%B0%8F%E9%8E%AE%20Phu%20Quoc" target="_blank" rel="noopener">導航</a></td></tr><tr class="attraction-row" data-id="28" data-region="南島" data-type="表演" data-tier="S+" data-time="晚上" data-feature="水舞／燈光／煙火／表演" data-search="Kiss of the Sea 海洋之吻秀 Sunset Town 日落小鎮 Phu Quoc 表演 大型夜間演出，需確認當日場次。">
+<td class="center"><input class="pick" type="checkbox" data-id="28"></td><td class="center">28</td>
+<td><div class="wrap3">南島<br>Sunset Town 日落小鎮</div></td>
+<td><div class="wrap3"><span class="name">Kiss of the Sea</span><span class="zh">海洋之吻秀</span></div></td>
+<td class="center"><span class="tier tier-Splus">S+</span></td>
+<td><a class="google" href="https://www.google.com/search?q=Kiss%20of%20the%20Sea%20%E6%B5%B7%E6%B4%8B%E4%B9%8B%E5%90%BB%E7%A7%80%20Sunset%20Town%20%E6%97%A5%E8%90%BD%E5%B0%8F%E9%8E%AE%20Phu%20Quoc%20Google%20reviews" target="_blank" rel="noopener">⭐ 4.6</a></td>
+<td><a class="google" href="https://www.google.com/search?q=Kiss%20of%20the%20Sea%20%E6%B5%B7%E6%B4%8B%E4%B9%8B%E5%90%BB%E7%A7%80%20Sunset%20Town%20%E6%97%A5%E8%90%BD%E5%B0%8F%E9%8E%AE%20Phu%20Quoc" target="_blank" rel="noopener">查看介紹</a></td>
+<td>表演</td><td>1–1.5 小時</td><td>晚上</td><td>需門票</td>
+<td>水舞／燈光／煙火／表演</td><td class="note">大型夜間演出，需確認當日場次。</td>
+<td><a class="mapnav" href="https://www.google.com/maps/search/?api=1&query=Kiss%20of%20the%20Sea%20%E6%B5%B7%E6%B4%8B%E4%B9%8B%E5%90%BB%E7%A7%80%20Sunset%20Town%20%E6%97%A5%E8%90%BD%E5%B0%8F%E9%8E%AE%20Phu%20Quoc" target="_blank" rel="noopener">導航</a></td></tr><tr class="attraction-row" data-id="29" data-region="南島" data-type="夜市／娛樂" data-tier="A" data-time="晚上" data-feature="夜市／散步／夜景" data-search="VUI-Fest Bazaar VUI-Fest 歡樂夜市 Sunset Town 日落小鎮 Phu Quoc 夜市／娛樂 可銜接日落小鎮與晚間表演。">
+<td class="center"><input class="pick" type="checkbox" data-id="29"></td><td class="center">29</td>
+<td><div class="wrap3">南島<br>Sunset Town 日落小鎮</div></td>
+<td><div class="wrap3"><span class="name">VUI-Fest Bazaar</span><span class="zh">VUI-Fest 歡樂夜市</span></div></td>
+<td class="center"><span class="tier tier-A">A</span></td>
+<td><a class="google" href="https://www.google.com/search?q=VUI-Fest%20Bazaar%20VUI-Fest%20%E6%AD%A1%E6%A8%82%E5%A4%9C%E5%B8%82%20Sunset%20Town%20%E6%97%A5%E8%90%BD%E5%B0%8F%E9%8E%AE%20Phu%20Quoc%20Google%20reviews" target="_blank" rel="noopener">⭐ 4.5</a></td>
+<td><a class="google" href="https://www.google.com/search?q=VUI-Fest%20Bazaar%20VUI-Fest%20%E6%AD%A1%E6%A8%82%E5%A4%9C%E5%B8%82%20Sunset%20Town%20%E6%97%A5%E8%90%BD%E5%B0%8F%E9%8E%AE%20Phu%20Quoc" target="_blank" rel="noopener">查看介紹</a></td>
+<td>夜市／娛樂</td><td>1–2 小時</td><td>晚上</td><td>免費</td>
+<td>夜市／散步／夜景</td><td class="note">可銜接日落小鎮與晚間表演。</td>
+<td><a class="mapnav" href="https://www.google.com/maps/search/?api=1&query=VUI-Fest%20Bazaar%20VUI-Fest%20%E6%AD%A1%E6%A8%82%E5%A4%9C%E5%B8%82%20Sunset%20Town%20%E6%97%A5%E8%90%BD%E5%B0%8F%E9%8E%AE%20Phu%20Quoc" target="_blank" rel="noopener">導航</a></td></tr><tr class="attraction-row" data-id="30" data-region="南島" data-type="海灘" data-tier="S" data-time="上午～下午" data-feature="白沙／海灘／拍照" data-search="Khem Beach 白沙灘 Bãi Khem 白沙灘 Phu Quoc 海灘 南島知名白沙海灘。">
+<td class="center"><input class="pick" type="checkbox" data-id="30"></td><td class="center">30</td>
+<td><div class="wrap3">南島<br>Bãi Khem 白沙灘</div></td>
+<td><div class="wrap3"><span class="name">Khem Beach</span><span class="zh">白沙灘</span></div></td>
+<td class="center"><span class="tier tier-S">S</span></td>
+<td><a class="google" href="https://www.google.com/search?q=Khem%20Beach%20%E7%99%BD%E6%B2%99%E7%81%98%20B%C3%A3i%20Khem%20%E7%99%BD%E6%B2%99%E7%81%98%20Phu%20Quoc%20Google%20reviews" target="_blank" rel="noopener">⭐ 4.6</a></td>
+<td><a class="google" href="https://www.google.com/search?q=Khem%20Beach%20%E7%99%BD%E6%B2%99%E7%81%98%20B%C3%A3i%20Khem%20%E7%99%BD%E6%B2%99%E7%81%98%20Phu%20Quoc" target="_blank" rel="noopener">查看介紹</a></td>
+<td>海灘</td><td>2–4 小時</td><td>上午～下午</td><td>免費／部分區域</td>
+<td>白沙／海灘／拍照</td><td class="note">南島知名白沙海灘。</td>
+<td><a class="mapnav" href="https://www.google.com/maps/search/?api=1&query=Khem%20Beach%20%E7%99%BD%E6%B2%99%E7%81%98%20B%C3%A3i%20Khem%20%E7%99%BD%E6%B2%99%E7%81%98%20Phu%20Quoc" target="_blank" rel="noopener">導航</a></td></tr><tr class="attraction-row" data-id="31" data-region="南島" data-type="海灘" data-tier="S" data-time="上午～下午" data-feature="白沙／海灘／玩水" data-search="Sao Beach 星灘 Bãi Sao 星灘 Phu Quoc 海灘 富國島經典海灘之一。">
+<td class="center"><input class="pick" type="checkbox" data-id="31"></td><td class="center">31</td>
+<td><div class="wrap3">南島<br>Bãi Sao 星灘</div></td>
+<td><div class="wrap3"><span class="name">Sao Beach</span><span class="zh">星灘</span></div></td>
+<td class="center"><span class="tier tier-S">S</span></td>
+<td><a class="google" href="https://www.google.com/search?q=Sao%20Beach%20%E6%98%9F%E7%81%98%20B%C3%A3i%20Sao%20%E6%98%9F%E7%81%98%20Phu%20Quoc%20Google%20reviews" target="_blank" rel="noopener">⭐ 4.4</a></td>
+<td><a class="google" href="https://www.google.com/search?q=Sao%20Beach%20%E6%98%9F%E7%81%98%20B%C3%A3i%20Sao%20%E6%98%9F%E7%81%98%20Phu%20Quoc" target="_blank" rel="noopener">查看介紹</a></td>
+<td>海灘</td><td>2–4 小時</td><td>上午～下午</td><td>免費／部分設施</td>
+<td>白沙／海灘／玩水</td><td class="note">富國島經典海灘之一。</td>
+<td><a class="mapnav" href="https://www.google.com/maps/search/?api=1&query=Sao%20Beach%20%E6%98%9F%E7%81%98%20B%C3%A3i%20Sao%20%E6%98%9F%E7%81%98%20Phu%20Quoc" target="_blank" rel="noopener">導航</a></td></tr><tr class="attraction-row" data-id="32" data-region="南島" data-type="歷史遺址" data-tier="S" data-time="上午～下午" data-feature="歷史／戰爭遺址／文化" data-search="Phu Quoc Prison 富國島監獄／椰子樹監獄 An Thới 安泰 Phu Quoc 歷史遺址 歷史內容較沉重，親子安排需自行斟酌。">
+<td class="center"><input class="pick" type="checkbox" data-id="32"></td><td class="center">32</td>
+<td><div class="wrap3">南島<br>An Thới 安泰</div></td>
+<td><div class="wrap3"><span class="name">Phu Quoc Prison</span><span class="zh">富國島監獄／椰子樹監獄</span></div></td>
+<td class="center"><span class="tier tier-S">S</span></td>
+<td><a class="google" href="https://www.google.com/search?q=Phu%20Quoc%20Prison%20%E5%AF%8C%E5%9C%8B%E5%B3%B6%E7%9B%A3%E7%8D%84%EF%BC%8F%E6%A4%B0%E5%AD%90%E6%A8%B9%E7%9B%A3%E7%8D%84%20An%20Th%E1%BB%9Bi%20%E5%AE%89%E6%B3%B0%20Phu%20Quoc%20Google%20reviews" target="_blank" rel="noopener">⭐ 4.4</a></td>
+<td><a class="google" href="https://www.google.com/search?q=Phu%20Quoc%20Prison%20%E5%AF%8C%E5%9C%8B%E5%B3%B6%E7%9B%A3%E7%8D%84%EF%BC%8F%E6%A4%B0%E5%AD%90%E6%A8%B9%E7%9B%A3%E7%8D%84%20An%20Th%E1%BB%9Bi%20%E5%AE%89%E6%B3%B0%20Phu%20Quoc" target="_blank" rel="noopener">查看介紹</a></td>
+<td>歷史遺址</td><td>1–2 小時</td><td>上午～下午</td><td>免費</td>
+<td>歷史／戰爭遺址／文化</td><td class="note">歷史內容較沉重，親子安排需自行斟酌。</td>
+<td><a class="mapnav" href="https://www.google.com/maps/search/?api=1&query=Phu%20Quoc%20Prison%20%E5%AF%8C%E5%9C%8B%E5%B3%B6%E7%9B%A3%E7%8D%84%EF%BC%8F%E6%A4%B0%E5%AD%90%E6%A8%B9%E7%9B%A3%E7%8D%84%20An%20Th%E1%BB%9Bi%20%E5%AE%89%E6%B3%B0%20Phu%20Quoc" target="_blank" rel="noopener">導航</a></td></tr><tr class="attraction-row" data-id="33" data-region="南島" data-type="寺廟／文化" data-tier="S" data-time="上午" data-feature="寺廟／海景／文化" data-search="Hộ Quốc Pagoda 護國寺 Hộ Quốc 護國寺 Phu Quoc 寺廟／文化 依山面海，適合上午參訪。">
+<td class="center"><input class="pick" type="checkbox" data-id="33"></td><td class="center">33</td>
+<td><div class="wrap3">南島<br>Hộ Quốc 護國寺</div></td>
+<td><div class="wrap3"><span class="name">Hộ Quốc Pagoda</span><span class="zh">護國寺</span></div></td>
+<td class="center"><span class="tier tier-S">S</span></td>
+<td><a class="google" href="https://www.google.com/search?q=H%E1%BB%99%20Qu%E1%BB%91c%20Pagoda%20%E8%AD%B7%E5%9C%8B%E5%AF%BA%20H%E1%BB%99%20Qu%E1%BB%91c%20%E8%AD%B7%E5%9C%8B%E5%AF%BA%20Phu%20Quoc%20Google%20reviews" target="_blank" rel="noopener">⭐ 4.6</a></td>
+<td><a class="google" href="https://www.google.com/search?q=H%E1%BB%99%20Qu%E1%BB%91c%20Pagoda%20%E8%AD%B7%E5%9C%8B%E5%AF%BA%20H%E1%BB%99%20Qu%E1%BB%91c%20%E8%AD%B7%E5%9C%8B%E5%AF%BA%20Phu%20Quoc" target="_blank" rel="noopener">查看介紹</a></td>
+<td>寺廟／文化</td><td>1–2 小時</td><td>上午</td><td>免費</td>
+<td>寺廟／海景／文化</td><td class="note">依山面海，適合上午參訪。</td>
+<td><a class="mapnav" href="https://www.google.com/maps/search/?api=1&query=H%E1%BB%99%20Qu%E1%BB%91c%20Pagoda%20%E8%AD%B7%E5%9C%8B%E5%AF%BA%20H%E1%BB%99%20Qu%E1%BB%91c%20%E8%AD%B7%E5%9C%8B%E5%AF%BA%20Phu%20Quoc" target="_blank" rel="noopener">導航</a></td></tr><tr class="attraction-row" data-id="34" data-region="南島" data-type="離島／海上活動" data-tier="S" data-time="白天" data-feature="跳島／浮潛／海景" data-search="An Thoi Islands 安泰群島 An Thới Archipelago 安泰群島 Phu Quoc 離島／海上活動 通常透過跳島、浮潛或包船行程體驗。">
+<td class="center"><input class="pick" type="checkbox" data-id="34"></td><td class="center">34</td>
+<td><div class="wrap3">南島<br>An Thới Archipelago 安泰群島</div></td>
+<td><div class="wrap3"><span class="name">An Thoi Islands</span><span class="zh">安泰群島</span></div></td>
+<td class="center"><span class="tier tier-S">S</span></td>
+<td><a class="google" href="https://www.google.com/search?q=An%20Thoi%20Islands%20%E5%AE%89%E6%B3%B0%E7%BE%A4%E5%B3%B6%20An%20Th%E1%BB%9Bi%20Archipelago%20%E5%AE%89%E6%B3%B0%E7%BE%A4%E5%B3%B6%20Phu%20Quoc%20Google%20reviews" target="_blank" rel="noopener">⭐ 4.6</a></td>
+<td><a class="google" href="https://www.google.com/search?q=An%20Thoi%20Islands%20%E5%AE%89%E6%B3%B0%E7%BE%A4%E5%B3%B6%20An%20Th%E1%BB%9Bi%20Archipelago%20%E5%AE%89%E6%B3%B0%E7%BE%A4%E5%B3%B6%20Phu%20Quoc" target="_blank" rel="noopener">查看介紹</a></td>
+<td>離島／海上活動</td><td>4–8 小時</td><td>白天</td><td>需參加行程</td>
+<td>跳島／浮潛／海景</td><td class="note">通常透過跳島、浮潛或包船行程體驗。</td>
+<td><a class="mapnav" href="https://www.google.com/maps/search/?api=1&query=An%20Thoi%20Islands%20%E5%AE%89%E6%B3%B0%E7%BE%A4%E5%B3%B6%20An%20Th%E1%BB%9Bi%20Archipelago%20%E5%AE%89%E6%B3%B0%E7%BE%A4%E5%B3%B6%20Phu%20Quoc" target="_blank" rel="noopener">導航</a></td></tr></tbody></table></div></section>
+<footer class="small">研究版 1.0｜V1｜更新日期 2026-09-05｜景點資訊與營業／票價可能變動，出發前請再確認官方公告。</footer></div>
+<button id="backTop" title="回到頂端">↑</button>
+<script>
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+const KEY="phuQuocAttractionsV1:", SAVED_KEY=KEY+"savedProfiles";
+let activeRegion="全部", selectedIds=new Set();
+const sets={type:new Set(),tier:new Set(),time:new Set(),feature:new Set()};
+function getSavedProfiles(){try{return JSON.parse(localStorage.getItem(SAVED_KEY)||"[]").filter(Boolean)}catch(e){return []}}
+function refreshSavedProfiles(v){const s=$("#savedProfiles"),n=getSavedProfiles();s.innerHTML='<option value="">已儲存清單</option>'+n.map(x=>`<option>${x}</option>`).join("");if(v&&n.includes(v))s.value=v}
+function saveProfileName(n){const a=getSavedProfiles();if(!a.includes(n))a.push(n);localStorage.setItem(SAVED_KEY,JSON.stringify(a));refreshSavedProfiles(n)}
+function applyFilters(){
+ const q=$("#search").value.trim().toLowerCase();
+ $$(".attraction-row").forEach(r=>{const okRegion=activeRegion==="全部"||r.dataset.region===activeRegion;
+ const okType=!sets.type.size||sets.type.has(r.dataset.type), okTier=!sets.tier.size||sets.tier.has(r.dataset.tier);
+ const okTime=!sets.time.size||[...sets.time].some(x=>r.dataset.time.includes(x));
+ const okFeature=!sets.feature.size||[...sets.feature].some(x=>r.dataset.feature.includes(x));
+ const okQ=!q||r.dataset.search.toLowerCase().includes(q);r.classList.toggle("hidden",!(okRegion&&okType&&okTier&&okTime&&okFeature&&okQ));});
+ $$(".section").forEach(s=>s.classList.toggle("hidden",!$$(".attraction-row:not(.hidden)").some(r=>r.closest(".section")===s)));
+}
+function syncChecks(){$$(".pick").forEach(c=>{c.checked=selectedIds.has(+c.dataset.id);c.closest("tr").classList.toggle("chosen",c.checked)})}
+function renderMine(){
+ const rows=$$(".attraction-row").filter(r=>selectedIds.has(+r.dataset.id));
+ if(!rows.length){$("#myList").innerHTML='<p class="small">尚未勾選景點。</p>';return}
+ $("#myList").innerHTML='<p><b>已選 '+rows.length+' 個景點</b></p><div class="body-wrap"><table><tbody>'+rows.map(r=>r.outerHTML).join("")+'</tbody></table></div>';
+ $$("#myList .pick").forEach(c=>c.addEventListener("change",e=>{const id=+e.target.dataset.id;if(!e.target.checked)selectedIds.delete(id);syncChecks();renderMine()}));
+}
+$$(".pick").forEach(c=>c.addEventListener("change",e=>{const id=+e.target.dataset.id;e.target.checked?selectedIds.add(id):selectedIds.delete(id);syncChecks();renderMine()}));
+$("#regionButtons").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;activeRegion=b.dataset.regionFilter;$$(".region-buttons button").forEach(x=>x.classList.toggle("active",x===b));applyFilters()});
+$$(".multi>button").forEach(b=>b.addEventListener("click",e=>{e.stopPropagation();const m=$("#"+b.dataset.menu);$$(".menu").filter(x=>x!==m).forEach(x=>x.classList.remove("open"));m.classList.toggle("open")}));
+document.addEventListener("click",()=>$$(".menu").forEach(m=>m.classList.remove("open")));$$(".menu").forEach(m=>m.addEventListener("click",e=>e.stopPropagation()));
+[["typeMenu","type"],["tierMenu","tier"],["timeMenu","time"],["featureMenu","feature"]].forEach(([id,k])=>$("#"+id).addEventListener("change",e=>{e.target.checked?sets[k].add(e.target.value):sets[k].delete(e.target.value);applyFilters()}));
+$("#search").addEventListener("input",applyFilters);
+$("#reset").addEventListener("click",()=>{activeRegion="全部";Object.values(sets).forEach(s=>s.clear());$$(".menu input").forEach(c=>c.checked=false);$("#search").value="";$$(".region-buttons button").forEach(b=>b.classList.toggle("active",b.dataset.regionFilter==="全部"));applyFilters()});
+$("#saveMine").addEventListener("click",()=>{const p=$("#profile").value.trim();if(!p)return alert("請輸入清單名稱");localStorage.setItem(KEY+p,JSON.stringify([...selectedIds]));localStorage.setItem(KEY+"lastProfile",p);saveProfileName(p);alert("已儲存："+p)});
+$("#loadMine").addEventListener("click",()=>{const p=($("#savedProfiles").value||$("#profile").value).trim();if(!p)return alert("請選擇或輸入清單名稱");$("#profile").value=p;selectedIds.clear();JSON.parse(localStorage.getItem(KEY+p)||"[]").forEach(id=>selectedIds.add(+id));localStorage.setItem(KEY+"lastProfile",p);syncChecks();renderMine()});
+$("#savedProfiles").addEventListener("change",()=>{if($("#savedProfiles").value)$("#profile").value=$("#savedProfiles").value});
+$("#clearMine").addEventListener("click",()=>{selectedIds.clear();syncChecks();renderMine()});
+$("#copyMine").addEventListener("click",async()=>{const rows=$$(".attraction-row").filter(r=>selectedIds.has(+r.dataset.id));if(!rows.length)return alert("目前沒有勾選景點");const t=rows.map(r=>r.children[3].innerText.replace(/\n/g," / ")).join("\n");try{await navigator.clipboard.writeText(t);alert("已複製我的景點清單")}catch(e){alert(t)}});
+$$(".body-wrap").forEach(w=>w.addEventListener("scroll",()=>{const h=w.closest(".section")?.querySelector(".head-track");if(h)h.style.transform=`translateX(${-w.scrollLeft}px)`}));
+window.addEventListener("scroll",()=>$("#backTop").classList.toggle("show",scrollY>500));$("#backTop").addEventListener("click",()=>scrollTo({top:0,behavior:"smooth"}));
+document.addEventListener("keydown",e=>{if(e.key==="Escape")$$(".menu").forEach(m=>m.classList.remove("open"))});
+refreshSavedProfiles();const last=localStorage.getItem(KEY+"lastProfile");if(last){$("#profile").value=last;refreshSavedProfiles(last)};applyFilters();
+</script></body></html>
